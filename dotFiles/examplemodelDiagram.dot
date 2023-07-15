@@ -1,0 +1,50 @@
+digraph G {
+    rankdir = TB;
+    // Top to bottom layout
+    
+    node [shape = box; style = rounded;];
+    // Rounded rectangles for titles
+    subgraph cluster_title1 {
+        label = "Title 1";
+        rankdir = TB;
+        // Top to bottom layout
+        process1_1 [shape = "cds";label = "Process 1.1";];
+        process1_2 [shape = "cds";label = "Process 1.2";];
+        process1_3 [shape = "cds";label = "Process 1.3";];
+        process1_1 -> char1_1 [label = "Characteristic 1.1";];
+        process1_2 -> char1_2 [label = "Characteristic 1.2";];
+        process1_3 -> char1_3 [label = "Characteristic 1.3";];
+    }
+    
+    subgraph cluster_title2 {
+        label = "Title 2";
+        rankdir = TB;
+        // Top to bottom layout
+        process2_1 [shape = "cds";label = "Process 2.1";];
+        process2_2 [shape = "cds";label = "Process 2.2";];
+        process2_3 [shape = "cds";label = "Process 2.3";];
+        process2_1 -> char2_1 [label = "Characteristic 2.1";];
+        process2_2 -> char2_2 [label = "Characteristic 2.2";];
+        process2_3 -> char2_3 [label = "Characteristic 2.3";];
+    }
+    
+    subgraph cluster_title3 {
+        label = "Title 3";
+        rankdir = TB;
+        // Top to bottom layout
+        process3_1 [shape = "cds";label = "Process 3.1";];
+        process3_2 [shape = "cds";label = "Process 3.2";];
+        process3_3 [shape = "cds";label = "Process 3.3";];
+        process3_1 -> char3_1 [label = "Characteristic 3.1";];
+        process3_2 -> char3_2 [label = "Characteristic 3.2";];
+        process3_3 -> char3_3 [label = "Characteristic 3.3";];
+    }
+    
+    // Edge between titles
+    process1_1 -> process2_1 [shape = "cds"; style = "invis";];
+    process2_1 -> process3_1 [shape = "cds"; style = "invis";];
+    
+    // Edge between processes
+    char1_1 -> char2_1 [style = "invis";];
+    char2_1 -> char3_1 [style = "invis";];
+}

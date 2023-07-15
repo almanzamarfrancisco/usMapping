@@ -1,0 +1,67 @@
+digraph G {
+    rankdir = TB;
+    // Top to bottom layout
+    
+    node [shape = box; style = rounded;];
+    // Rounded rectangles for titles
+    subgraph cluster_title1 {
+        label = "Title 1";
+        style = "filled, rounded";
+        // Fill the background
+        fillcolor = white;
+        // Specify the fill color
+        rankdir = TB;
+        // Top to bottom layout
+        node [shape = cds;];
+        process1_1 [label = "Process 1.1";];
+        process1_2 [label = "Process 1.2";];
+        process1_3 [label = "Process 1.3";];
+        node [shape = note;];
+        process1_1 -> p1_1_char1_1 -> p1_1_char1_2 [style = "invis";];
+        process1_2 -> p1_2_char1_3 -> p1_2_char1_4 [style = "invis";];
+        process1_3 -> p1_3_char1_5 -> p1_3_char1_6 [style = "invis";];
+    }
+    
+    subgraph cluster_title2 {
+        label = "Title 2";
+        style = "filled, rounded";
+        // Fill the background
+        fillcolor = white;
+        // Specify the fill color
+        rankdir = TB;
+        // Top to bottom layout
+        node [shape = cds;];
+        process2_1 [label = "Process 2.1";];
+        process2_2 [label = "Process 2.2";];
+        process2_3 [label = "Process 2.3";];
+        node [shape = note;];
+        process2_1 -> p2_1_char2_1 -> p2_1_char2_2 [style = "invis";];
+        process2_2 -> p2_2_char2_3 -> p2_2_char2_4 [style = "invis";];
+        process2_3 -> p2_3_char2_5 -> p2_3_char2_6 [style = "invis";];
+    }
+    
+    subgraph cluster_title3 {
+        label = "Title 3";
+        style = "filled, rounded";
+        // Fill the background
+        fillcolor = white;
+        // Specify the fill color
+        rankdir = TB;
+        // Top to bottom layout
+        node [shape = cds;];
+        process3_1 [label = "Process 3.1";];
+        process3_2 [label = "Process 3.2";];
+        process3_3 [label = "Process 3.3";];
+        node [shape = note;];
+        process3_1 -> p3_1char3_1 -> p3_1char3_2 [style = "invis";];
+        process3_2 -> p3_2char3_3 -> p3_2char3_4 [style = "invis";];
+        process3_3 -> p3_3char3_5 -> p3_3char3_6 [style = "invis";];
+    }
+    
+    // Edge between titles
+    process1_1 -> process2_1 [style = "invis";];
+    process2_1 -> process3_1 [style = "invis";];
+    
+    // Edge between processes
+    p1_1_char1_2 -> p2_1_char2_2 -> p3_1char3_2 [style = "invis";];
+}
