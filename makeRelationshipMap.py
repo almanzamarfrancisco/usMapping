@@ -1,9 +1,9 @@
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import pandas as pd
 import graphviz
 import textwrap
 import re
-import io
+# import io
 import json
 import requests
 
@@ -11,39 +11,39 @@ import requests
 # https://vectorcb.storiesonboard.com/storymapcard/contratos-vector-to-be/<USId>
 
 
-def searchUSIdsFromWebPage(user_stories: list):
-    url = 'https://vectorcb.storiesonboard.com/m/contratos-vector-to-be'
-    with open("./inputFiles/cookies.json", "r+") as cookiesfile:
-        cookies = json.load(cookiesfile)
-    response = requests.get(url, cookies=cookies)
-    with open("./inputFiles/storiesOnBoard.html", "w+") as html:
-        html.write(response.text)
-    # buf = io.StringIO(trimmendUS)
-    # with open("./inputFiles/userStories.html", "r") as ushtml:
-    #     soup = BeautifulSoup(ushtml, 'html.parser')
-    # us_from_web = []
-    # # counter = 0
-    # for x in soup.find_all('li', class_="board-subtask-card card board-card-color-white", id=True):
-    #     for span in x.find_all('span', class_="board-card-title-text"):
-    #         title = span.contents[1]
-    #         # print(f"=> Id: {x['id']} - {title}")
-    #         us_from_web.append({'id': x['id'], 'title': str(title)})
-    # # print(json.dumps(us_from_web, indent="  ", ensure_ascii=False))
-    # result = []
-    # webIdsAdded = []
-    # valueExists = -1
-    # for usfw in us_from_web:
-    #     for us in buf:
-    #         if usfw['title'] in us:
-    #             try:
-    #                 valueExists = webIdsAdded.index(usfw['id'])
-    #             except ValueError:
-    #                 result.append(
-    #                     {"webId": usfw['id'], "title": usfw['title'], "description": "", "dependencies": []})
-    #                 webIdsAdded.append(usfw['id'])
-    #     buf.seek(0)
-    # print(json.dumps(result, indent="  ", ensure_ascii=False))
-    # return result
+def searchUSIdsFromWebPage():
+    board_url = 'https://vectorcb.storiesonboard.com/m/contratos-vector-to-be'
+    data_url = 'https://vectorcb.storiesonboard.com/api/q/storymapbyslugquery'
+    data = {"QueryType": "StorymapBySlugQuery",
+            "StoryMapSlug": "contratos-vector-to-be"}
+    with open("./inputFiles/headers.json", "r+") as headersfile:
+        headers = json.load(headersfile)
+    # board_response = requests.get(board_url, headers=headers)
+    # soup = BeautifulSoup(board_response.text, 'html.parser')
+    # token = ''
+    # Find csrf token from board
+    # for script in soup.findAll('script', type="text/javascript"):
+    #     find_csrf = script.text.find("currentCsrfToken")
+    #     if find_csrf != -1:
+    #         token = script.text[find_csrf+19:find_csrf+55]
+    #         print(token)
+    #         break
+    story_map_response = requests.post(
+        url=data_url, json=data, headers=headers)
+    # print(json.dumps(story_map_response.text, indent="   "))
+    web_us_board = json.loads(story_map_response.text)
+    epics = web_us_board["Activities"]
+    characteristics = []
+    releases = []  # User Stories are separated on releases
+    web_USs = []
+    for epic in epics:
+        characteristics.extend(epic["Tasks"])
+    for characteristic in characteristics:
+        releases.extend(characteristic["TaskReleases"])
+    for release in releases:
+        web_USs.extend(release["Subtasks"])
+    for us in web_USs:
+        print(json.dumps(us["Title"], indent=" "))
 
 
 def checkSyntaxAndGetList(titles, content, labels_values):
@@ -117,7 +117,8 @@ def getUserStoriesFromExelFile(fileName: str):
 if __name__ == '__main__':
     exel_file_USs = getUserStoriesFromExelFile(
         "./inputFiles/Contratos_vector_to_be.xlsx")
-    searchUSIdsFromWebPage(exel_file_USs)
+    # searchUSIdsFromWebPage(exel_file_USs)
+    searchUSIdsFromWebPage()
     # trimmedUserStoriesString = getUserStoriesFromExelFile(
     #     "./inputFiles/Contratos_vector_to_be.xlsx")
     # print(trimmedUserStoriesString)
