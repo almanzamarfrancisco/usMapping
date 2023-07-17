@@ -1,52 +1,29 @@
- - HU070 - Configuración de datos por segmento 
-    - HU001 - Catálogo de Tipos de Figuras para contratos
- - HU067 - Asignar figura a una persona 
-    - HU002 Configuración de segmentos en módulo de personas por Tipo de figura
-    - HU-057 - Administración de personas en módulo de personas
-    - HU -XX - Catálogo de documentos por figura
- - HU057 - Administración de personas en módulo de personas 
-    - HU-Búsqueda. 
-    - HU093 - Centro de notificaciones 
-    - HU-101 - Carga de documentación adicional
-    - HU-103 - Definición de trámites y procedimientos
-    - HU-Búsqueda. 
-    - HU093 - Centro de notificaciones 
-    - HU-101 - Carga de documentación adicional
-    - HU-103 - Definición de trámites y procedimientos
-    - HU070 - Configuración de datos por segmento
- - HUB-046 Capturar la información de **"Accesos a internet"** de contratos de PF y PM para configurar a las aplicaciones donde tendrán la facultad  para poder acceder 
-    - HU-037 Configuración de segmentos en módulo de personas por Tipo de contrato
-    - HU-002 Configuración de segmentos en módulo de personas por Tipo de figura"
- - **HU-114**  **Personas Autorizadas** de contratos de PF ó PM que incluya datos generales, dirección, actividad empresarial, autorizaciones para el manejo de la cuenta y girar instrucciones a nombre del titular en caso de ser necesario 
- - HUB-054 **Instrucciones de envio de notificaciones** considerar no recapturar la información de la dirección del titular, al menos que sea una dirección diferente. 
-    - HU-000 catalogo de recibo de instrucciones
- - HU023 - Capturar la información **"FATCA"** de contratos de PF y PM 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU096 - Capturar cuentas de extranjeros **FATCA** 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU088 - Capturar el **Origen y Destino de los Recursos** 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
-    - HU089 - Catálogo de fuente de ingresos
-    - HU067 - Asignar figura a una persona
-    - HU-014 - Módulo de personas
-    - HU-014 - Módulo de personas
-    - HU067 - Asignar figura a una persona
-    - HU067 - Asignar figura a una persona
-    - HU067 - Asignar figura a una persona
-    - HU067 - Asignar figura a una persona
-    - HU070 - Configuración de datos por segmento
- - HU020 - Capturar la información de **"Domicilio particular"** de contratos de PF y PM 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU028 - Registro de **Estructura accionaria** para persona moral 
-    - HU-002 Configuración de segmentos en módulo de personas por Tipo de figura
- - HU016 - Registro de **Datos generales** de la persona física y moral 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU065- Datos generales para un prospecto 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU019 - **Perfilamiento cualitativo** de contratos de PF ó PM, considerar como mejora con la HU anterior para enviar en la misma liga es cuestionario al cliente 
-    - HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
- - HU110 - Cambio de dato en contrato 
-    - HU-068 - Bitacora de actualizaciones
-    - HU-100 - Búsqueda de prospectos
-    - HU-102 - Revisión de documentación adicional para prospecto
-    - HU105 – Configuración de tipos de documento
+
+- HU002 Configuración de segmentos en módulo de personas por Tipo de figura  
+	- HU001 - Catálogo de Tipos de Figuras para contratos
+	- HU069 - Catálogo de segmentos
+- HU070 - Configuración de datos por segmento  
+	- HU071 - Catálogo de tipos de persona
+	- HU069 - Catálogo de segmentos
+- HU057 - Administración de personas en módulo de personas  
+	- HU001 -Catálogo de Tipos de participantes(Figuras)
+	- HUXXX - Catálogo de sexo
+- HU067 - Alta de prospecto  
+	- HU-057 Administración de personas en módulo de personas
+	- HU002 Configuración de segmentos en módulo de personas por Tipo de figura
+	- HU-070 - Configuración de datos por segmento
+	- HU-XX Catálogo de documentación por figura
+- HU096 - Capturar cuentas de extranjeros FATCA  
+	- HU067 - Asignar figura a una persona
+	- HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+	- HU070 - Configuración de datos por segmento
+	- HU028 - Registro de **Estructura accionaria** para persona moral
+- HU019 - Perfilamiento cualitativo de contratos de PF ó PM, considerar como mejora con la HU anterior para enviar en la misma liga es cuestionario al cliente  
+	- HU-014 - Módulo de personas
+	- HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+	- HU-005 -Cuestionario perfil cualitativo
+- HU052 - Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF  
+	- HU-037 Configuración de segmentos en módulo de personas por Tipo de contrato
+	- HU070 - Configuración de datos por segmento
+- HU137 - Segmento Control de documentación  
+	- HU- Documentos de figuras
