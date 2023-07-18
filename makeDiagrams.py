@@ -8,8 +8,6 @@ import json
 import requests
 
 
-# https://vectorcb.storiesonboard.com/storymapcard/contratos-vector-to-be/<USId>
-
 def getServiceToken():
     with open("./inputFiles/headers.json", "r+") as headersfile:
         headers = json.load(headersfile)
@@ -165,11 +163,12 @@ def getDiagramStructure(process_names, USs, annotations, proccess_label: str) ->
                     annotations, us_a_id)
                 if annotation_found['Name'] == process_name:
                     result[proccess_label][process_name].append(
-                        us['Title'])
+                        {'title': us['Title'], 'id': us['Id']})
     return result
 
 
 def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: str):
+    us_detail_url = "https://vectorcb.storiesonboard.com/storymapcard/contratos-vector-to-be"
     title = graphviz.Graph(name=process_label)
     # Get diagram Structure
     diagram_structure = getDiagramStructure(
@@ -179,13 +178,14 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
         for i, process_name in enumerate(process_names):
             title.node(f"{process_label}_PROC_{i}", process_name, shape='cds')
             for j, us in enumerate(diagram_structure[process_label][process_name]):
-                title.node(us[:6], us[:6], shape='note')
+                title.node(us['title'][:6], us['title'][:6], shape='note',
+                           href=f"{us_detail_url}/{us['id']}")
                 if j > 0:
                     title.edge(
-                        diagram_structure[process_label][process_name][j-1][:6], us[:6], constraint='true')
+                        diagram_structure[process_label][process_name][j-1]['title'][:6], us['title'][:6], constraint='true')
             if len(diagram_structure[process_label][process_name]):
                 title.edge(
-                    f'{process_label}_PROC_{i}', diagram_structure[process_label][process_name][0][:6], constraint='true')
+                    f'{process_label}_PROC_{i}', diagram_structure[process_label][process_name][0]['title'][:6], constraint='true')
             if i > 0:
                 title.edge(f'{process_label}_PROC_{i-1}',
                            f'{process_label}_PROC_{i}', constraint='false')
@@ -200,7 +200,8 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
     for pl in proccess_list:
         writeProcessDotDiagram(dot, USs, annotations,
                                pl['list'], pl['label'])
-
+    dot.view(filename='ProccessDiagram.dot',
+             directory='./finalFiles', cleanup=True, quiet=False)
     with open("./finalFiles/ProccessDiagram.dot", "w+") as diagram_file:
         diagram_file.write(dot.source)
     print(f"Done!")
