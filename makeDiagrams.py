@@ -152,8 +152,7 @@ def checkSyntaxAndGetCleanList(USs: list):
         }}
 
 
-# def writeProcessDotDiagram(USs: list, annotations: list):
-def writeProcessDotDiagram():
+def writeProcessDotDiagram(USs, annotations):
     process_names = [
         "Solicitud de contrato",
         "Creación de prospecto",
@@ -162,58 +161,68 @@ def writeProcessDotDiagram():
         "Alta documentación ",
         "Registro de información ",
         "Envío a PLD / Contratos",
-        # "Alta de prospecto",
-        # "Alta de persona",
-        # "anexo de servicios de internet",
-        # "digitalización de documentos",
-        # "documentación de alta de prospecto",
-        # "documentos de alta de contrato",
-        # "modificación de cliente/contrato",
-        # "Registro de segmentos",
-        # "selección de tipo de contrato",
-        # "Tarjeta de internet",
-        # "validación de PLD",
-        # "Validación de prospecto"
+        "Alta de prospecto",
+        "Alta de persona",
+        "anexo de servicios de internet",
+        "digitalización de documentos",
+        "documentación de alta de prospecto",
+        "documentos de alta de contrato",
+        "modificación de cliente/contrato",
+        "Registro de segmentos",
+        "selección de tipo de contrato",
+        "Tarjeta de internet",
+        "validación de PLD",
+        "Validación de prospecto"
     ]
-    uss = ['us_0', 'us_1', 'us_2', 'us_3']
-    # for i, us in enumerate(USs):
-    #     if i < 29 and i > 173:
-    #         continue
-    #     for us_annotation in us['CardAnnotations']:
-    #         annotation_found = searchAnnotationById(
-    #             annotations, us_annotation['AnnotationId'])
-    #         if annotation_found['Name'] in process_names:
-    #             print(f"{i} {us['Title']}")
-    #             print(
-    #                 f"\t -> {annotation_found['Name'] in process_names} <= {annotation_found['Name']}")
-    #             break
+    diagram_structure = {}
     print(f"[I] Making graphviz code...")
     dot = graphviz.Digraph('G', comment='US Process model relationships')
     dot.graph_attr['rankdir'] = 'TB'
 
     title = graphviz.Graph(name='t1')
-    with dot.subgraph(name="cluster t1") as title:
-        title.attr(label='Title 1', style="rounded")
-        for i, pn in enumerate(process_names):
-            title_text = pn
-            # print(title_text)
-            title.node(f"PROC_{i}", title_text, shape='cds')
-            if i == 1:
-                for j, us in enumerate(uss):
-                    title.node(us, us, shape='note')
-                    if j > 0:
-                        title.edge(uss[j-1], us, constraint='true')
-                title.edge(f'PROC_{i}', uss[0], constraint='true')
-            if i == 4:
-                for k, us in enumerate(uss):
-                    title.node(f"{us}2", f"{us}2", shape='note')
-                    if k > 0:
-                        title.edge(f"{uss[k-1]}2", f"{us}2", constraint='true')
-                title.edge(f'PROC_{i}', f"{uss[0]}2", constraint='true')
-            # title.edge_attr.update(style="invis")
-            if i > 0:
-                title.edge(f'PROC_{i-1}', f'PROC_{i}', constraint='false')
-
+    diagram_structure['t1'] = {}
+    for i, process_name in enumerate(process_names):
+        diagram_structure["t1"][process_name] = []
+        print(f"=> Process Name {process_name}")
+        for j, us in enumerate(USs):
+            if j > 29 and j < 40:
+                us_annotation_ids = [usa['AnnotationId']
+                                     for usa in us['CardAnnotations']]
+                print(
+                    f"\tUS annotations {us['Title'][:6]}: {us_annotation_ids}")
+                for us_a_id in us_annotation_ids:
+                    annotation_found = searchAnnotationById(
+                        annotations, us_a_id)
+                    print(
+                        f"\t\t\tSentence: {annotation_found['Name']} is in {process_name}: {annotation_found['Name'] in process_names}")
+                    if annotation_found['Name'] == process_name:
+                        print(
+                            f"\t\t\t\t=> Annotation found {annotation_found['Id']} - {annotation_found['Name']}")
+                        diagram_structure['t1'][process_name].append(
+                            us['Title'])
+                    else:
+                        continue
+    with open(f"./diagram_structure.json", "w+") as dsf:
+        dsf.write(json.dumps(diagram_structure,
+                  indent=" ", ensure_ascii=False))
+    # with dot.subgraph(name="cluster t1") as title:
+    #     title.attr(label='Title 1', style="rounded")
+    #     for i, process_name in enumerate(process_names):
+    #         title.node(f"PROC_{i}", process_name, shape='cds')
+    #         for j, us in enumerate(diagram_structure['t1'][process_name]):
+    #             title.node(us, us, shape='note')
+    #             print(f"PROC_{i}\n\tNodo: {us[:6]} created:")
+    #             if j > 0:
+    #                 title.edge(
+    #                     diagram_structure['t1'][process_name][j-1], us, constraint='true')
+    #                 print(
+    #                     f"\tArrow: {diagram_structure['t1'][process_name][j-1][:5]} -> {us[:5]}")
+    #         title.edge(
+    #             f'PROC_{i}', diagram_structure['t1'][process_name][0][:5], constraint='true')
+    #         print(
+    #             f"=> Arrow Proccedure PROC_{i} => {diagram_structure['t1'][process_name][0][:5]}")
+        # print(json.dumps(f"{diagram_structure['t1']}",
+        #       indent="   ", ensure_ascii=False))
     # print(dot.source)
 
     with open("./finalFiles/ProccessDiagram.dot", "w+") as diagram_file:
@@ -225,5 +234,5 @@ if __name__ == '__main__':
     userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     # writeDependenciesFile(USs, releases, features)
-    writeProcessDotDiagram()
-    # writeProcessDotDiagram(USs, annotations)
+    # writeProcessDotDiagram()
+    writeProcessDotDiagram(USs, annotations)

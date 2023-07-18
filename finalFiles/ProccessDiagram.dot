@@ -1,37 +1,4 @@
 // US Process model relationships
 digraph G {
-    graph [rankdir = TB;];
-    subgraph "cluster t1" {
-        label = "Title 1";
-        style = rounded;
-        PROC_0 [label = "Solicitud de contrato";shape = cds;];
-        PROC_1 [label = "Creación de prospecto";shape = cds;];
-        us_0 [label = us_0;shape = note;];
-        us_1 [label = us_1;shape = note;];
-        us_0 -> us_1 [constraint = true;];
-        us_2 [label = us_2;shape = note;];
-        us_1 -> us_2 [constraint = true;];
-        us_3 [label = us_3;shape = note;];
-        us_2 -> us_3 [constraint = true;];
-        PROC_1 -> us_0 [constraint = true;];
-        PROC_0 -> PROC_1 [constraint = false;];
-        PROC_2 [label = "Selección de tipo de contrato";shape = cds;];
-        PROC_1 -> PROC_2 [constraint = false;];
-        PROC_3 [label = "Registro de segmento de info";shape = cds;];
-        PROC_2 -> PROC_3 [constraint = false;];
-        PROC_4 [label = "Alta documentación ";shape = cds;];
-        us_02 [label = us_02;shape = note;];
-        us_12 [label = us_12;shape = note;];
-        us_02 -> us_12 [constraint = true;];
-        us_22 [label = us_22;shape = note;];
-        us_12 -> us_22 [constraint = true;];
-        us_32 [label = us_32;shape = note;];
-        us_22 -> us_32 [constraint = true;];
-        PROC_4 -> us_02 [constraint = true;];
-        PROC_3 -> PROC_4 [constraint = false;];
-        PROC_5 [label = "Registro de información ";shape = cds;];
-        PROC_4 -> PROC_5 [constraint = false;];
-        PROC_6 [label = "Envío a PLD / Contratos";shape = cds;];
-        PROC_5 -> PROC_6 [constraint = false;];
-    }
+	graph [rankdir=TB]
 }
