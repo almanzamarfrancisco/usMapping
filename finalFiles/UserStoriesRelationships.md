@@ -29,5 +29,3 @@
 	- HU052 - Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF  
 		- HU-037 Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
-	- HU137 - Segmento Control de documentación  
-		- HU- Documentos de figuras

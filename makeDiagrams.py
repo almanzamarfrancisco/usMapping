@@ -51,6 +51,7 @@ def getUserStoriesFromAPI():
     story_map_response = requests.post(
         url=data_url, json=data, headers=headers)
     web_us_board = json.loads(story_map_response.text)
+    annotations = web_us_board["StoryMap"]["Annotations"]
     epics = web_us_board["Activities"]
     features = []
     releases = []
@@ -63,7 +64,7 @@ def getUserStoriesFromAPI():
         web_USs.extend(release["Subtasks"])
     # for us in web_USs:
     #     print(json.dumps(us["Title"], indent=" "))
-    return {'USs': web_USs, 'releases': releases, 'features': features, 'epics': epics}
+    return {'USs': web_USs, 'releases': releases, 'features': features, 'epics': epics, 'Annotations': annotations}
 
 
 def searchReleaseById(releases, id):
@@ -84,10 +85,18 @@ def searchFeatureById(features, id):
     return []
 
 
+def searchAnnotationById(annotations, id):
+    for a in annotations:
+        if a['Id'] == id:
+            return a
+    raise ValueError("We didn't find that annotation id")
+    return []
+
+
 def writeDependenciesFile(uss, releases, features):
     added_releases = []
     added_features = []
-    with open("./transitionFiles/UserStoriesRelationships.md", "w+") as relationshipfile:
+    with open("./finalFiles/UserStoriesRelationships.md", "w+") as relationshipfile:
         text = ''
         s = ''
         for us in uss:
@@ -105,7 +114,7 @@ def writeDependenciesFile(uss, releases, features):
                 s = s.replace('# DEPENDENCIAS', ' ')
                 s = s.replace('\n', '\n\t\t- ')
                 text = text + f"\n\t- {us['Title']} {s}"
-        print(text)
+        # print(text)
         # print(len(features_involved))
         relationshipfile.write(text)
 
@@ -143,23 +152,78 @@ def checkSyntaxAndGetCleanList(USs: list):
         }}
 
 
-if __name__ == '__main__':
-    userStoriesGotten, releases, features, epics = getUserStoriesFromAPI().values()
-    USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
-    writeDependenciesFile(USs, releases, features)
-    # userStories = searchUSIdsFromWebPage(trimmedUserStoriesString)
-    # # print(json.dumps(userStories, indent='  ', ensure_ascii=False))
+# def writeProcessDotDiagram(USs: list, annotations: list):
+def writeProcessDotDiagram():
+    process_names = [
+        "Solicitud de contrato",
+        "Creación de prospecto",
+        "Selección de tipo de contrato",
+        "Registro de segmento de info",
+        "Alta documentación ",
+        "Registro de información ",
+        "Envío a PLD / Contratos",
+        # "Alta de prospecto",
+        # "Alta de persona",
+        # "anexo de servicios de internet",
+        # "digitalización de documentos",
+        # "documentación de alta de prospecto",
+        # "documentos de alta de contrato",
+        # "modificación de cliente/contrato",
+        # "Registro de segmentos",
+        # "selección de tipo de contrato",
+        # "Tarjeta de internet",
+        # "validación de PLD",
+        # "Validación de prospecto"
+    ]
+    uss = ['us_0', 'us_1', 'us_2', 'us_3']
+    # for i, us in enumerate(USs):
+    #     if i < 29 and i > 173:
+    #         continue
+    #     for us_annotation in us['CardAnnotations']:
+    #         annotation_found = searchAnnotationById(
+    #             annotations, us_annotation['AnnotationId'])
+    #         if annotation_found['Name'] in process_names:
+    #             print(f"{i} {us['Title']}")
+    #             print(
+    #                 f"\t -> {annotation_found['Name'] in process_names} <= {annotation_found['Name']}")
+    #             break
+    print(f"[I] Making graphviz code...")
+    dot = graphviz.Digraph('G', comment='US Process model relationships')
+    dot.graph_attr['rankdir'] = 'TB'
 
-    # print(f"[I] Making graphviz code...")
-    # dot = graphviz.Digraph('G', comment='US Process model relationships')
-    # dot.graph_attr['rankdir'] = 'TB'
-    # for i, us in enumerate(userStories):
-    #     if len(us['title']) > 1:
-    #         title_text = textwrap.indent(f"{us['title']}", '\\n')
-    #         print(title_text)
-    #         dot.node(f"US_{i}", title_text, shape='note')
-    # # dot.edges(['US_0', 'US_18'])
+    title = graphviz.Graph(name='t1')
+    with dot.subgraph(name="cluster t1") as title:
+        title.attr(label='Title 1', style="rounded")
+        for i, pn in enumerate(process_names):
+            title_text = pn
+            # print(title_text)
+            title.node(f"PROC_{i}", title_text, shape='cds')
+            if i == 1:
+                for j, us in enumerate(uss):
+                    title.node(us, us, shape='note')
+                    if j > 0:
+                        title.edge(uss[j-1], us, constraint='true')
+                title.edge(f'PROC_{i}', uss[0], constraint='true')
+            if i == 4:
+                for k, us in enumerate(uss):
+                    title.node(f"{us}2", f"{us}2", shape='note')
+                    if k > 0:
+                        title.edge(f"{uss[k-1]}2", f"{us}2", constraint='true')
+                title.edge(f'PROC_{i}', f"{uss[0]}2", constraint='true')
+            # title.edge_attr.update(style="invis")
+            if i > 0:
+                title.edge(f'PROC_{i-1}', f'PROC_{i}', constraint='false')
+
     # print(dot.source)
-    # with open("./diagram.dot", "w+") as diagram_file:
-    #     diagram_file.write(dot.source)
-    # print(f"Done!")
+
+    with open("./finalFiles/ProccessDiagram.dot", "w+") as diagram_file:
+        diagram_file.write(dot.source)
+    print(f"Done!")
+
+
+if __name__ == '__main__':
+    userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
+    USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
+    # writeDependenciesFile(USs, releases, features)
+    writeProcessDotDiagram()
+    # writeProcessDotDiagram(USs, annotations)
