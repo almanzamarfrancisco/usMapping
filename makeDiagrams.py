@@ -1,9 +1,8 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 import graphviz
-import textwrap
 import re
-# import io
+from unidecode import unidecode
 import json
 import requests
 
@@ -61,7 +60,8 @@ def getUserStoriesFromAPI():
     for release in releases:
         web_USs.extend(release["Subtasks"])
     # for us in web_USs:
-    #     print(json.dumps(us["Title"], indent=" "))
+    #     if us['Title'] == 'HU038 - Tipos de contratos para ambos mercados Bursátil y Divisas':
+    #         print(json.dumps(us["Title"], indent=" "))
     return {'USs': web_USs, 'releases': releases, 'features': features, 'epics': epics, 'Annotations': annotations}
 
 
@@ -121,7 +121,7 @@ def writeDependenciesFile(uss, releases, features):
 def checkSyntaxAndGetCleanList(USs: list):
     title_syntax = r"HU([\d]{3}|XXX) *- * [^\*\n]*"
     description_syntax = r"# Descripci(o|ó)n:? ?\n"
-    aceptance_criteria_syntax = r"# Criterios de Aceptaci(o|ó)n:\n"
+    aceptance_criteria_syntax = r"# Criterios de Aceptaci(o|ó)n:? ?\n"
     dependencies_syntax = r"# Dependencias:\n"
     syntax_title_error = []
     syntax_description_error = []
@@ -150,6 +150,13 @@ def checkSyntaxAndGetCleanList(USs: list):
         }}
 
 
+def normString(text: str) -> str:
+    if isinstance(text, str):
+        return unidecode(text).casefold()
+    else:
+        return text
+
+
 def getDiagramStructure(process_names, USs, annotations, proccess_label: str) -> dict:
     result = {}
     result[proccess_label] = {}
@@ -161,14 +168,14 @@ def getDiagramStructure(process_names, USs, annotations, proccess_label: str) ->
             for us_a_id in us_annotation_ids:
                 annotation_found = searchAnnotationById(
                     annotations, us_a_id)
-                if annotation_found['Name'] == process_name:
+                if normString(annotation_found['Name']) == normString(process_name):
                     result[proccess_label][process_name].append(
                         {'title': us['Title'], 'id': us['Id']})
     return result
 
 
 def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: str):
-    us_detail_url = "https://vectorcb.storiesonboard.com/storymapcard/contratos-vector-to-be"
+    us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
     title = graphviz.Graph(name=process_label)
     # Get diagram Structure
     diagram_structure = getDiagramStructure(
@@ -212,7 +219,7 @@ if __name__ == '__main__':
         "Solicitud de contrato",
         "Creación de prospecto",
         "Selección de tipo de contrato",
-        "Registro de segmento de info",
+        "Registro de segmentos",
         "Alta documentación ",
         "Registro de información ",
         "Envío a PLD / Contratos",
@@ -221,7 +228,7 @@ if __name__ == '__main__':
         "Recepción de prospecto",
         "Validación de prospecto",
         "Aceptación de prospecto",
-        "Validación PLD (LN y M)",
+        "Validación PLD",
         "Prospecto Aceptado",
         "Generación de Contrato",
         "Envío de Contrato para Firma",
@@ -233,8 +240,8 @@ if __name__ == '__main__':
     ]
     process4_names = [  # Contract modification
         "Tipo de Modificación",
-        "Modificación",
-        "Digitalización",
+        "Modificación de cliente/contrato",
+        "Digitalización de documentos",
     ]
     print(f"[I] Obtaining StoryMap from API...")
     userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()

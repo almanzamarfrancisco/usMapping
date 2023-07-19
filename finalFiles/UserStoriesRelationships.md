@@ -8,24 +8,237 @@
 		- HU071 - Catálogo de tipos de persona
 		- HU069 - Catálogo de segmentos
 	- HU057 - Administración de personas en módulo de personas  
-		- HU001 -Catálogo de Tipos de participantes(Figuras)
+		- HU001 - Catálogo de Tipos de participantes(Figuras)
 		- HUXXX - Catálogo de sexo
 	- HU067 - Alta de prospecto  
-		- HU-057 Administración de personas en módulo de personas
-		- HU002 Configuración de segmentos en módulo de personas por Tipo de figura
-		- HU-070 - Configuración de datos por segmento
-		- HU-XX Catálogo de documentación por figura
+		- HU057 - Administración de personas en módulo de personas
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
+		- HU070 - Configuración de datos por segmento
+		- HU072 - Mostrar documentos aceptados en el registro de personas
+		- HU073 - Agregar documento aceptado en el registro de personas
+		- HU074 - Modificar documento aceptado en el registro de personas
+		- HU075 - Administración de Documentos por figuras
 - Configuración de parámetros y catálogos(Prioridad 4)
 
 	- HU096 - Capturar cuentas de extranjeros FATCA  
 		- HU067 - Asignar figura a una persona
-		- HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
-		- HU028 - Registro de **Estructura accionaria** para persona moral
+		- HU028 - Registro de Estructura accionaria para persona moral
 	- HU019 - Perfilamiento cualitativo de contratos de PF ó PM, considerar como mejora con la HU anterior para enviar en la misma liga es cuestionario al cliente  
-		- HU-014 - Módulo de personas
-		- HU-002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
-		- HU-005 -Cuestionario perfil cualitativo
+		- HU014 - Módulo de personas
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU005 -Cuestionario perfil cualitativo
 	- HU052 - Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF  
-		- HU-037 Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
+	- HU137 - Segmento Control de documentación  
+		- HU037 Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+		- HU072 - Mostrar documentos aceptados en el registro de personas
+		- HU073 - Agregar documento aceptado en el registro de personas
+		- HU074 - Modificar documento aceptado en el registro de personas
+		- HU075 - Administración de Documentos por figuras
+		- 
+		- NOTA: Las siguientes son **IMAGENES REFERENCIAL, NO SON PANTALLAS FINALES**:
+		- 
+		- IMAGEN 1 Selección de figuras
+		- ![Image.png](/dl/yrfEgZ8hUQ4WdzoKYVDvxQ?slug=modulo-de-contratos-vector)
+		- 
+		- IMAGEN 2 Selección de grupo de documentación
+		- ![Image.png](/dl/SvQNXXS5LORbPDoKYU9_Tw?slug=modulo-de-contratos-vector)
+		- 
+		- IMAGEN 3 Selección de documento
+		- ![Image.png](/dl/lqhWQH8BFhhcSzoKYVACBA?slug=modulo-de-contratos-vector)
+		- 
+		- IMAGEN 4
+		- ![Image.png](/dl/CFraHb7OvqdJHDoKYVBjJA?slug=modulo-de-contratos-vecto)
+		- 
+		- IMAGEN 5 Grupos de contratos para bursatil
+		- ![Image.png](/dl/HGtDn-UZGDnuDDoMgZZh8A?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN 6 Administración de documentos de Bursatil
+		- ![Image.png](/dl/j22HfToQzrUZ4DoMgZmQYw?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN 7 Administración
+		- ![Image.png](/dl/BWWI--N390MxzDoMgZ6Tng?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN Administración de documentos de Divisas
+		- ![Image.png](/dl/pI7JXmLpEEwbKToMgbSKkQ?slug=contratos-vector-to-be)
+	- HU016 - Registro de Datos generales de la persona física y moral  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+	- HU065 - Datos generales para un prospecto  
+		- HU066 - Nueva persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+	- HU059 - Capturar la información de Propietario real de los recursos relacionados a personas  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
+		- HU070 - Configuración de datos por segmento
+	- HU028 - Registro de **Estructura accionaria** para persona moral  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
+		- HU070 - Configuración de datos por segmento
+	- HU022 - Capturar la información de las Cuentas de cheques de contratos de PF y PM, que incluya la información: número de cuenta CLABE, nombre del banco para poder tener una cuenta en donde se dispersen los fondos.  
+		- HU014 - Módulo de personas
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU005 - Cuestionario perfil cualitativo
+	- HU020 - Registro de Domicilio particular de contratos de PF y PM  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+	- HU021 - Persona Políticamente 
+Expuesta (PEP)  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+		- HU003 - Catálogo cargos politicos
+	- HU030 - Capturar la información de Empleado  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+	- HU018 - Perfilamiento de inversión de prospecto de contratos de PM ó PF - En esta se determina el perfil de inversión  
+		- HU014 - Módulo de personas
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+	- HU054 - Instrucciones de envío de notificaciones  
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HUXXX - Catalogo de recibo de instrucciones (nuevo)
+		- HUXXX - Catalogo de Envio de documentación (nuevo)
+		- HU-Anexo-EP001 - Administrar Modulo de personas
+	- HU118 - Captura de **beneficiarios** de Bursatil  
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+		- HU-Anexo-EP001 - Administrar Modulo de personas
+	- HU045 - Capturar la información del **Representante Legal** a los contratos de persona Moral y Física  
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+		- HUXXX - Catalogo Documentos que lo acreditan
+	- HU088 - Capturar el **Origen y Destino de los Recursos** - Bursátil  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+		- HU089 - Catálogo de fuente de ingresos
+		- HU090 - Catálogo de tipos de procedencia de recursos
+		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
+	- HU025 - Vínculos familiares de contratos de PF ó PM  :
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+		- HUXXX - Catálogo de parentescos
+	- HU024 - Vínculos patrimoniales  :
+		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+	- HU142 - Origen y Destino de los recursos Divisas  
+		- HU067 - Asignar figura a una persona
+		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
+		- HU070 - Configuración de datos por segmento
+		- HU089 - Catálogo de fuente de ingresos
+		- HU090 - Catálogo de tipos de procedencia de recursos
+		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
+	- HU049 - Registrar la información de la **institución educativa** de contratos de PF y PM para poder conocer si pertenece a un giro educativo. # Dependencias
+		- 
+		- HUXXX - Instituciones educativas.
+	- HU073 - Agregar documento aceptado en el registro de personas # Dependencias
+	- HU074 - Modificar documento aceptado en el registro de personas # Dependencias
+	- HU075 - Desactivar documento para el registro de personas # Dependencias
+	- HU076 - Mostrar documentos aceptados en el registro de contratos # Dependencias
+	- HU077 - Agregar documento aceptado en el registro de contratos # Dependencias
+	- HU078 - Modificar documento aceptado en el registro de contratos # Dependencias
+	- HU079 - Desactivar documento para el registro de contratos # Dependencias
+	- HU080 - Solicitar documentos en el registro de persona # Dependencias
+	- HU084 - Solicitar documento(s) en el registro de contrato # Dependencias
+	- HU136 - Imprimir documentación de alta de prospecto # Dependencias
+		- HU153 - Plantilla solicitud de alta (B y D)
+		- HU154 - Plantilla FATCA
+		- HU155 - Plantilla aviso de privacidad(B y D)
+		- HU156 - Plantilla de Cuestionario de perfil de inversión (B)
+		- HU157 - Plantilla de entrevista(B y D)
+		- 
+		- NOTA: Las siguientes son **IMAGENES REFERENCIAL, NO SON PANTALLAS FINALES**:
+		- 
+		- IMAGEN 1: Modal para imprimir el alta del prospecto CIB
+		- ![Image.png](/dl/7vlVFMRKPSOi1joMVM6yRQ?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN 2: Modal para imprimir el alta del prospecto Divisas
+		- ![Image.png](/dl/zNjIw9r__pK4bjoMfR6jUg?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN 3: Correo con los documentos de alta de prospecto
+		- ![Image.png](/dl/v4xL8czVwLJboDoJ2kmU5Q?slug=modulo-de-contratos-vector)
+		- 
+		- IMAGEN 4: Error al generar los documentos de alta de prospecto CIB
+		- ![Image.png](/dl/aJCAkHDho9Fd8zoMVMudtA?slug=contratos-vector-to-be)
+		- 
+		- 
+		- 
+		- IMAGEN 1: para reimprimir documetos de CIB
+		- ![Image.png](/dl/IDWIr4GVC_i5hzoJ7kMcgg?slug=modulo-de-contratos-vector)~~~~
+		- 
+		- * Cuando se ingresa a la opción de Impresión, por default se muestra la fecha de impresión del contrato con el objetivo de realizar la misma impresión de los documentos que se imprimieron en esa fecha.
+	- HU153 - Plantilla solicitud de alta (B y D) # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU016 - Registro de **Datos generales** de la persona física y moral
+	- HU154 - Plantilla FATCA # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU096 - Capturar cuentas de extranjeros FATCA
+	- HU155 - Plantilla aviso de privacidad(B y D) # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU016 - Registro de **Datos generales** de la persona física y moral
+	- HU156 - Plantilla de Cuestionario de perfil de inversión (B) # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU016 - Registro de **Datos generales** de la persona física y moral
+		- HU018 - Perfilamiento de inversión de prospecto de contratos de PM ó PF
+	- HU157 - Plantilla de entrevista(B y D) # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU016 - Registro de **Datos generales** de la persona física y moral
+	- HU144 - proceso de emisión de firmas. cuando se registra que recibió la carta firmada se asigna el permiso por default.  :
+	- HU116 - Consulta de prospectos de contrato  
+		- HU067 - Alta de prospecto
+	- HU064 - Consulta de contratos (Módulo de contratos)  
+	- HU135 - Ver 
+ detalle/radiografía del prospecto en módulo de contratos  
+		- HU069 - Catálogo de segmentos
+		- HU116 - Consulta de **prospectos de contrato**
+	- HU107 - Cambio de datos (Persona Moral)  
+		- HUXXX - Búsqueda. 
+		- HU068 - Bitacora de actualizaciones
+		- HU093 - Centro de notificaciones 
+		- HU100 - Búsqueda de prospectos
+		- HU101 - Carga de documentación adicional
+		- HU102 - Revisión de documentación adicional para prospecto
+		- HU103 - Definición de trámites y procedimientos
+		- HU105 - Configuración de tipos de documento
+		- HU106 - Configuración de plantillas de documentación
+	- HU092 - Cambio de datos personales (Personas Físicas)  
+		- HUXXX - Búsqueda. 
+		- HU068 - Historico de actualizaciones de datos personales
+		- HU093 - Centro de notificaciones 
+		- HU100 - Búsqueda de prospectos
+		- HU101 - Carga de documentación adicional
+		- HU102 - Revisión de documentación adicional para prospecto
+		- HU103 - Definición de trámites y procedimientos
+		- HU105 - Configuración de tipos de documento por trámite de actualización
+		- HU106 - Configuración de plantillas de documentación
+		- HU105 - y adjuntados a una plantilla de documentación HU106
+		- ........................................................................................................
+	- HU110 - Cambio de dato en contrato (proceso automatizado)  
+		- HUXXX - Búsqueda. 
+		- HU068 - Bitacora de actualizaciones
+		- HU093 - Centro de notificaciones 
+		- HU100 - Búsqueda de prospectos
+		- HU101 - Carga de documentación adicional
+		- HU102 - Revisión de documentación adicional para prospecto
+		- HU103 - Definición de trámites y procedimientos
+		- HU105 – Configuración de tipos de documento
+		- HU106 – Configuración de plantillas de documentación
+	- HU150 - Matriz de configuración de productos disponibles por tipo de contrato # Dependencias
+		- HUXXX - Catálogo de tipos de contratos
+		- HU151 - Catálogo de productos
+	- HU152 - Matriz de configuración de servicios por tipo de contrato # Dependencias
+		- HUXXX - Catálogo de tipos de contratos
+		- HU151 - Catálogo de productos
