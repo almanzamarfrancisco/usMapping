@@ -1,7 +1,7 @@
 
 - Configuración de parámetros y catálogos(Prioridad 4)
 
-	- HU002 Configuración de segmentos en módulo de personas por Tipo de figura  
+	- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura  
 		- HU001 - Catálogo de Tipos de Figuras para contratos
 		- HU069 - Catálogo de segmentos
 	- HU070 - Configuración de datos por segmento  
@@ -107,6 +107,7 @@ Expuesta (PEP)
 		- HUXXX - Catalogo de recibo de instrucciones (nuevo)
 		- HUXXX - Catalogo de Envio de documentación (nuevo)
 		- HU-Anexo-EP001 - Administrar Modulo de personas
+		- HU-161  Administración de catalogo de **la información de los apoderados por sucursal**
 	- HU118 - Captura de **beneficiarios** de Bursatil  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
@@ -122,10 +123,6 @@ Expuesta (PEP)
 		- HU089 - Catálogo de fuente de ingresos
 		- HU090 - Catálogo de tipos de procedencia de recursos
 		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
-	- HU025 - Vínculos familiares de contratos de PF ó PM  :
-		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
-		- HU070 - Configuración de datos por segmento
-		- HUXXX - Catálogo de parentescos
 	- HU024 - Vínculos patrimoniales  :
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
@@ -138,7 +135,13 @@ Expuesta (PEP)
 		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
 	- HU049 - Registrar la información de la **institución educativa** de contratos de PF y PM para poder conocer si pertenece a un giro educativo. # Dependencias
 		- 
-		- HUXXX - Instituciones educativas.
+		- HU-158 - Instituciones educativas.
+		- 
+		- ![Image.png](/dl/ThBdusvk8cxROzoLFAyjfg?slug=contratos-vector-to-be)
+		- 
+		- ![Image.png](/dl/xw6Ye-bjJgjrPzoMXWOuxg?slug=contratos-vector-to-be)
+		- 
+		- Nota: el registro previo de los segmentos de las figuras.
 	- HU073 - Agregar documento aceptado en el registro de personas # Dependencias
 	- HU074 - Modificar documento aceptado en el registro de personas # Dependencias
 	- HU075 - Desactivar documento para el registro de personas # Dependencias
@@ -171,8 +174,14 @@ Expuesta (PEP)
 		- 
 		- 
 		- 
-		- IMAGEN 1: para reimprimir documetos de CIB
+		- IMAGEN 5: para reimprimir documetos de CIB
 		- ![Image.png](/dl/IDWIr4GVC_i5hzoJ7kMcgg?slug=modulo-de-contratos-vector)~~~~
+		- 
+		- IMAGEN 6
+		- ![Image.png](/dl/IXN33KOJWj87JDoMhrZAlg?slug=contratos-vector-to-be)
+		- 
+		- IMAGEN 7
+		- ![Image.png](/dl/caKTnouupFQ2XDoMhrZqJw?slug=contratos-vector-to-be)
 		- 
 		- * Cuando se ingresa a la opción de Impresión, por default se muestra la fecha de impresión del contrato con el objetivo de realizar la misma impresión de los documentos que se imprimieron en esa fecha.
 	- HU153 - Plantilla solicitud de alta (B y D) # Dependencias
@@ -200,6 +209,11 @@ Expuesta (PEP)
 	- HU116 - Consulta de prospectos de contrato  
 		- HU067 - Alta de prospecto
 	- HU064 - Consulta de contratos (Módulo de contratos)  
+	- HU051 - Imprimir los documentos del Alta de contrato Bursatil # Dependencias
+		- HU008 - Solicitud para el anexo del servicio de SERVICIO DE PROFUNDIDAD
+		- 
+		- IMAGEN 1 Pantalla de impresión de documentos
+		- ![Image.png](/dl/-S1D8oYw0GngzzoKp8KgwQ?slug=modulo-de-contratos-vector)
 	- HU135 - Ver 
  detalle/radiografía del prospecto en módulo de contratos  
 		- HU069 - Catálogo de segmentos
@@ -236,9 +250,3 @@ Expuesta (PEP)
 		- HU103 - Definición de trámites y procedimientos
 		- HU105 – Configuración de tipos de documento
 		- HU106 – Configuración de plantillas de documentación
-	- HU150 - Matriz de configuración de productos disponibles por tipo de contrato # Dependencias
-		- HUXXX - Catálogo de tipos de contratos
-		- HU151 - Catálogo de productos
-	- HU152 - Matriz de configuración de servicios por tipo de contrato # Dependencias
-		- HUXXX - Catálogo de tipos de contratos
-		- HU151 - Catálogo de productos

@@ -1,42 +1,97 @@
-from tkinter import messagebox
-from tkinter import ttk
-from tkinter import *
-import json
+from functools import partial
+import tkinter as tk
 import makeDiagrams
+import json
+
+process1_names = [  # Prospect registration
+    "Catálogo y matriz de configuración",
+    "Alta de prospecto",
+    "Selección de tipo de contrato",
+    "Registro de segmento de info",
+    "Admin de servicios de internet ",
+    "Alta documentación",
+    "Envío a PLD / Contratos",
+]
+process2_names = [  # Information validation
+    "Recepción de prospecto",
+    "Validación de prospecto",
+    "Asignación de tarjeta de internet",
+    "Validación PLD",
+    "Aceptación de prospecto",
+    "Alta de Contrato",
+    "Envío de Contrato para Firma",
+]
+process3_names = [  # Signature, activation and digitalizace
+    "Recepción de Contrato Firmado",
+    "Activación de Contrato",
+    "Digitalización de Contrato",
+]
+process4_names = [  # Contract modification
+    "Modificación de cliente/contrato",
+    "Tipo de Modificación",
+    "Digitalización de documentos",
+]
+
+predefined_processes = [
+    {'label': 'Alta de prospecto', 'list': process1_names},
+    # {'label': 'Validación de información', 'list': process2_names},
+    # {'label': 'Firma, activación y digitalización', 'list': process3_names},
+    # {'label': 'Modificación de contrato', 'list': process4_names},
+]
 
 
-class windowLayout:
-    def __init__(self) -> None:
-        root = Tk()
-        root.title("User Stories Mapping")
+class window():
+    def add_list(self):
+        self.input_text = self.text_area.get("1.0", tk.END).strip()
+        if self.input_text:
+            # Split the input text by lines and add the list to the main list
+            self.new_list = [{'label': self.process_label_entry.get(
+            ), 'list': [item.strip() for item in self.input_text.split("\n")]}]
+            self.main_list.append(self.new_list)
+            self.listbox.configure(state='normal')
+            self.listbox.insert(tk.END, json.dumps(
+                self.new_list, indent='  ', ensure_ascii=False)+'\n')
+            self.listbox.configure(state='disabled')
+            # Clear the text area after adding the list
+            self.text_area.delete("1.0", tk.END)
+            self.process_label.set("")
+        else:
+            # If there was no input, show an error message
+            self.error_label.config(
+                text="Please enter a list of strings in the text area.")
 
-        mainframe = ttk.Frame(root, padding="3 3 12 12")
-        mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-        root.columnconfigure(0, weight=1)
-        root.rowconfigure(0, weight=1)
-
-        ttk.Label(mainframe, text="Processes: ").grid(
-            column=0, row=0, sticky=W)
-        self.inputBox = Text(mainframe, height=30, width=75,
-                             bg="gray", padx=2, pady=2)
-        self.inputBox.grid(column=0, row=3, columnspan=5)
-        self.inputBox.insert(
-            END, f"{json.dumps(makeDiagrams.process1_names, indent='   ', ensure_ascii=False)}")
-        self.inputBox.insert(
-            END, f"{json.dumps(makeDiagrams.process2_names, indent='   ', ensure_ascii=False)}")
-        self.inputBox.insert(
-            END, f"{json.dumps(makeDiagrams.process3_names, indent='   ', ensure_ascii=False)}")
-        self.inputBox.insert(
-            END, f"{json.dumps(makeDiagrams.process4_names, indent='   ', ensure_ascii=False)}")
-
-        ttk.Button(mainframe, text="Load diagrams",
-                   command=makeDiagrams.init).grid(column=0, row=7, sticky=W)
-
-        for child in mainframe.winfo_children():
-            child.grid_configure(padx=5, pady=5)
-
+    def __init__(self):
+        # Create the main Tkinter window
+        root = tk.Tk()
+        root.title("List of Lists (Multiline)")
+        # Main list to store the lists of strings
+        self.main_list = []
+        self.process_label = tk.StringVar()
+        self.process_label_entry = tk.Entry(
+            root, width=20, textvariable=self.process_label)
+        self.process_label_entry.pack(pady=10)
+        # Text area for inputting a list
+        self.text_area = tk.Text(root, width=100, height=6)
+        self.text_area.pack(pady=10)
+        # "Add List" button
+        add_button = tk.Button(root, text="Add List", command=self.add_list)
+        add_button.pack()
+        # Listbox to display the added lists
+        self.listbox = tk.Text(root, width=100)
+        self.listbox.pack(pady=10)
+        self.listbox.insert(tk.END, json.dumps(
+            predefined_processes, indent=4, ensure_ascii=False)+'\n')
+        self.listbox.configure(state='disabled')
+        # Error label to show any input validation errors
+        self.error_label = tk.Label(root, fg="red")
+        self.error_label.pack()
+        # Rendering button
+        render_button = tk.Button(root, text="Render", command=partial(
+            makeDiagrams.render, predefined_processes))
+        render_button.pack()
+        # Start the Tkinter event loop
         root.mainloop()
 
 
 if __name__ == '__main__':
-    windowLayout()
+    window()

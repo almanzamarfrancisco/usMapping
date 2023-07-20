@@ -1,10 +1,11 @@
 from bs4 import BeautifulSoup
-import pandas as pd
-import graphviz
-import re
 from unidecode import unidecode
-import json
+import pandas as pd
+import subprocess
 import requests
+import graphviz
+import json
+import re
 
 
 def getServiceToken():
@@ -103,7 +104,8 @@ def getAnnotationNames(annotations, us_ids: list):
 def writeDependenciesFile(uss, releases, features):
     added_releases = []
     added_features = []
-    with open("./finalFiles/UserStoriesRelationships.md", "w+") as relationshipfile:
+    markdownfileroute = f"./finalFiles/UserStoriesRelationships.md"
+    with open(markdownfileroute, "w+") as relationshipfile:
         text = ''
         s = ''
         for us in uss:
@@ -124,6 +126,16 @@ def writeDependenciesFile(uss, releases, features):
         # print(text)
         # print(len(features_involved))
         relationshipfile.write(text)
+
+        try:
+            result = subprocess.run(
+                f"markmap {markdownfileroute}", shell=True, check=True, text=True, capture_output=True)
+            if result.stderr:
+                print("Command error:")
+                print(result.stderr)
+            print("Return code:", result.returncode)
+        except subprocess.CalledProcessError as e:
+            print("Error executing command:", e)
 
 
 # Syntaxis checked in this order Title, Description, Aceptance criteria, Dependencies
@@ -264,47 +276,14 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
 
 
 us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
-process1_names = [  # Prospect registration
-    "Catálogo y matriz de configuración",
-    "Alta de prospecto",
-    "Selección de tipo de contrato",
-    "Registro de segmento de info",
-    "Admin de servicios de internet ",
-    "Alta documentación",
-    "Envío a PLD / Contratos",
-]
-process2_names = [  # Information validation
-    "Recepción de prospecto",
-    "Validación de prospecto",
-    "Asignación de tarjeta de internet",
-    "Validación PLD",
-    "Aceptación de prospecto",
-    "Alta de Contrato",
-    "Envío de Contrato para Firma",
-]
-process3_names = [  # Signature, activation and digitalizace
-    "Recepción de Contrato Firmado",
-    "Activación de Contrato",
-    "Digitalización de Contrato",
-]
-process4_names = [  # Contract modification
-    "Modificación de cliente/contrato",
-    "Tipo de Modificación",
-    "Digitalización de documentos",
-]
 
 
-def init():
+def render(predefined_processes):
     print(f"[I] Obtaining StoryMap from API...")
     userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
     print(f"[I] Done!")
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    # writeDependenciesFile(USs, releases, features)
-    generateDotDiagram(USs, annotations, [
-        {'label': 'Alta de prospecto', 'list': process1_names},
-        {'label': 'Validación de información', 'list': process2_names},
-        {'label': 'Firma, activación y digitalización', 'list': process3_names},
-        {'label': 'Modificación de contrato', 'list': process4_names},
-    ])
+    writeDependenciesFile(USs, releases, features)
+    generateDotDiagram(USs, annotations, predefined_processes)
