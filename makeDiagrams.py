@@ -264,36 +264,37 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
 
 
 us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
+process1_names = [  # Prospect registration
+    "Catálogo y matriz de configuración",
+    "Alta de prospecto",
+    "Selección de tipo de contrato",
+    "Registro de segmento de info",
+    "Admin de servicios de internet ",
+    "Alta documentación",
+    "Envío a PLD / Contratos",
+]
+process2_names = [  # Information validation
+    "Recepción de prospecto",
+    "Validación de prospecto",
+    "Asignación de tarjeta de internet",
+    "Validación PLD",
+    "Aceptación de prospecto",
+    "Alta de Contrato",
+    "Envío de Contrato para Firma",
+]
+process3_names = [  # Signature, activation and digitalizace
+    "Recepción de Contrato Firmado",
+    "Activación de Contrato",
+    "Digitalización de Contrato",
+]
+process4_names = [  # Contract modification
+    "Modificación de cliente/contrato",
+    "Tipo de Modificación",
+    "Digitalización de documentos",
+]
 
-if __name__ == '__main__':
-    process1_names = [  # Prospect registration
-        "Solicitud de contrato",
-        "Creación de prospecto",
-        "Selección de tipo de contrato",
-        "Registro de segmentos",
-        "Alta documentación ",
-        "Registro de información ",
-        "Envío a PLD / Contratos",
-    ]
-    process2_names = [  # Information validation
-        "Recepción de prospecto",
-        "Validación de prospecto",
-        "Aceptación de prospecto",
-        "Validación PLD",
-        "Prospecto Aceptado",
-        "Generación de Contrato",
-        "Envío de Contrato para Firma",
-    ]
-    process3_names = [  # Signature, activation and digitalizace
-        "Recepción de Contrato Firmado",
-        "Activación de Contrato",
-        "Digitalización de Contrato",
-    ]
-    process4_names = [  # Contract modification
-        "Tipo de Modificación",
-        "Modificación de cliente/contrato",
-        "Digitalización de documentos",
-    ]
+
+def init():
     print(f"[I] Obtaining StoryMap from API...")
     userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
     print(f"[I] Done!")
