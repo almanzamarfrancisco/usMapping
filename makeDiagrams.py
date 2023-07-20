@@ -91,6 +91,15 @@ def searchAnnotationById(annotations, id):
     return []
 
 
+def getAnnotationNames(annotations, us_ids: list):
+    names = []
+    for a in annotations:
+        for usid in us_ids:
+            if a['Id'] == usid['AnnotationId']:
+                names.append(a['Name'])
+    return names
+
+
 def writeDependenciesFile(uss, releases, features):
     added_releases = []
     added_features = []
@@ -119,7 +128,8 @@ def writeDependenciesFile(uss, releases, features):
 
 # Syntaxis checked in this order Title, Description, Aceptance criteria, Dependencies
 def checkSyntaxAndGetCleanList(USs: list):
-    title_syntax = r"HU([\d]{3}|XXX) *- * [^\*\n]*"
+    title_syntax = r"HU([\d]{3}) *- * [^\*\n]*"
+    # title_syntax = r"HU([\d]{3}|XXX) *- * [^\*\n]*"
     description_syntax = r"# Descripci(o|ó)n:? ?\n"
     aceptance_criteria_syntax = r"# Criterios de Aceptaci(o|ó)n:? ?\n"
     dependencies_syntax = r"# Dependencias:\n"
@@ -128,18 +138,17 @@ def checkSyntaxAndGetCleanList(USs: list):
     syntax_aceptance_criteria_error = []
     syntax_dependencies_error = []
     correct_USs = []
-    for us in USs:
-        if not re.finditer(title_syntax, us['Title']):
+    for i, us in enumerate(USs):
+        if not bool(re.match(title_syntax, us['Title'])):
             syntax_title_error.append(us)
-        elif not re.finditer(description_syntax, us['Description'], re.IGNORECASE):
-            syntax_description_error.append(us)
-        elif not re.finditer(aceptance_criteria_syntax, us['Description'], re.IGNORECASE):
-            syntax_aceptance_criteria_error.append(us)
-        elif not re.finditer(dependencies_syntax, us['Description'], re.IGNORECASE):
+        # elif not bool(re.match(description_syntax, us['Description'], re.IGNORECASE)):
+        #     syntax_description_error.append(us)
+        # elif not bool(re.match(aceptance_criteria_syntax, us['Description'], re.IGNORECASE)):
+        #     syntax_aceptance_criteria_error.append(us)
+        # elif not bool(re.match(dependencies_syntax, us['Description'], re.IGNORECASE)):
             syntax_dependencies_error.append(us)
         else:
             correct_USs.append(us)
-            # print(us['Description'])
     return {
         'USs': correct_USs,
         'syntaxError': {
@@ -159,6 +168,7 @@ def normString(text: str) -> str:
 
 def getDiagramStructure(process_names, USs, annotations, proccess_label: str) -> dict:
     result = {}
+    not_bind_uss = []
     result[proccess_label] = {}
     for i, process_name in enumerate(process_names):
         result[proccess_label][process_name] = []
@@ -166,53 +176,94 @@ def getDiagramStructure(process_names, USs, annotations, proccess_label: str) ->
             us_annotation_ids = [usa['AnnotationId']
                                  for usa in us['CardAnnotations']]
             for us_a_id in us_annotation_ids:
-                annotation_found = searchAnnotationById(
-                    annotations, us_a_id)
+                annotation_found = searchAnnotationById(annotations, us_a_id)
                 if normString(annotation_found['Name']) == normString(process_name):
                     result[proccess_label][process_name].append(
-                        {'title': us['Title'], 'id': us['Id']})
-    return result
+                        {'title': us['Title'], 'id': us['Id'], 'annotations': getAnnotationNames(annotations, us['CardAnnotations'])})
+                else:
+                    not_bind_uss.append({'title': us['Title'], 'id': us['Id'], 'annotations': getAnnotationNames(
+                        annotations, us['CardAnnotations'])})
+    return {'structure': result, 'not_bind_uss': not_bind_uss}
 
 
 def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: str):
-    us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
     title = graphviz.Graph(name=process_label)
     # Get diagram Structure
-    diagram_structure = getDiagramStructure(
-        process_names, USs, annotations, process_label)
+    diagram_structure, rest_uss = getDiagramStructure(
+        process_names, USs, annotations, process_label).values()
     with dot.subgraph(name=f"cluster_{process_label}") as title:
         title.attr(label=process_label, style="rounded", rankdir='TB')
+        process_names.reverse()
         for i, process_name in enumerate(process_names):
             title.node(f"{process_label}_PROC_{i}", process_name, shape='cds')
             for j, us in enumerate(diagram_structure[process_label][process_name]):
-                title.node(us['title'][:6], us['title'][:6], shape='note',
-                           href=f"{us_detail_url}/{us['id']}")
+                fillcolor = "#7efccc" if 'Aprobada por Cliente' in us['annotations'] else "#ff7063"
+                title.node(us['title'][:6], us['title'][:6],
+                           shape='note', href=f"{us_detail_url}/{us['id']}", style="filled", color=fillcolor)
                 if j > 0:
-                    title.edge(
-                        diagram_structure[process_label][process_name][j-1]['title'][:6], us['title'][:6], constraint='true')
+                    title.edge(diagram_structure[process_label][process_name]
+                               [j-1]['title'][:6], us['title'][:6], constraint='true')
             if len(diagram_structure[process_label][process_name]):
-                title.edge(
-                    f'{process_label}_PROC_{i}', diagram_structure[process_label][process_name][0]['title'][:6], constraint='true')
-            if i > 0:
-                title.edge(f'{process_label}_PROC_{i-1}',
-                           f'{process_label}_PROC_{i}', constraint='false')
+                title.edge(f'{process_label}_PROC_{i}',
+                           diagram_structure[process_label][process_name][0]['title'][:6], constraint='true')
+            # if i > 0:
+            #     title.edge(f'{process_label}_PROC_{i}',
+            #                f'{process_label}_PROC_{i-1}', constraint='false')
+    return rest_uss
 
 
 def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
+    rest_uss = []
     print(f"[I] Getting diagram structure...")
     print(f"[I] Making graphviz code...")
 
     dot = graphviz.Digraph('G', comment='US Process model relationships')
     dot.graph_attr['rankdir'] = 'TB'
-    for pl in proccess_list:
-        writeProcessDotDiagram(dot, USs, annotations,
-                               pl['list'], pl['label'])
+    for i, pl in enumerate(proccess_list):
+        rus = writeProcessDotDiagram(
+            dot, USs, annotations, pl['list'], pl['label'])
+        for ru in rus:
+            if not ru in rest_uss:
+                rest_uss.append(ru)
+    proccess_list.reverse()
+    for i, pl in enumerate(proccess_list):
+        if i < len(proccess_list)-1:
+            # print(f"{pl['label']}_PROC_{len(pl['list'])-1} -> {proccess_list[i+1]['label']}_PROC_0")
+            dot.edge(f"{proccess_list[i+1]['label']}_PROC_0",
+                     f"{pl['label']}_PROC_{len(pl['list'])-1}", style='invis')
+
     dot.view(filename='ProccessDiagram.dot',
              directory='./finalFiles', cleanup=True, quiet=False)
     with open("./finalFiles/ProccessDiagram.dot", "w+") as diagram_file:
         diagram_file.write(dot.source)
+
+    second_dot = graphviz.Digraph('H', comment='User Stories without process')
+    with second_dot.subgraph(name=f"cluster_rest", graph_attr=dict(rankdir='LR', rank="max")) as rest:
+        green = []
+        red = []
+        rest.attr(label='User Stories without process', style="rounded")
+        for i, ru in enumerate(rest_uss):
+            if 'Aprobada por Cliente' in ru['annotations']:
+                fillcolor = "#7efccc"
+                green.append(ru)
+            else:
+                fillcolor = "#ff7063"
+                red.append(ru)
+            rest.node(ru['title'][:6], ru['title'][:6], shape='note',
+                      href=f"{us_detail_url}/{ru['id']}", style="filled", color=fillcolor)
+        for j, r in enumerate(red):
+            if j < len(red)-1:
+                rest.edge(red[j+1]['title'][:6], r['title'][:6])
+        for k, g in enumerate(green):
+            if k < len(green)-1:
+                rest.edge(green[k+1]['title'][:6], g['title'][:6])
+    second_dot.view(filename='USsWithoutProcess.dot',
+                    directory='./finalFiles', cleanup=True, quiet=False)
+
     print(f"Done!")
 
+
+us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
 
 if __name__ == '__main__':
     process1_names = [  # Prospect registration
@@ -249,7 +300,7 @@ if __name__ == '__main__':
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    writeDependenciesFile(USs, releases, features)
+    # writeDependenciesFile(USs, releases, features)
     generateDotDiagram(USs, annotations, [
         {'label': 'Alta de prospecto', 'list': process1_names},
         {'label': 'Validación de información', 'list': process2_names},
