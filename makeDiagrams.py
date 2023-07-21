@@ -160,6 +160,7 @@ def checkSyntaxAndGetCleanList(USs: list):
         # elif not bool(re.match(dependencies_syntax, us['Description'], re.IGNORECASE)):
             syntax_dependencies_error.append(us)
         else:
+            print(us['Title'])
             correct_USs.append(us)
     return {
         'USs': correct_USs,
@@ -254,6 +255,7 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
         green = []
         red = []
         rest.attr(label='User Stories without process', style="rounded")
+        rest.edge_attr['style'] = 'invis'
         for i, ru in enumerate(rest_uss):
             if 'Aprobada por Cliente' in ru['annotations']:
                 fillcolor = "#7efccc"

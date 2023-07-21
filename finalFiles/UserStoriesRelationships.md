@@ -145,7 +145,6 @@ Expuesta (PEP)
 	- HU073 - Agregar documento aceptado en el registro de personas # Dependencias
 	- HU074 - Modificar documento aceptado en el registro de personas # Dependencias
 	- HU075 - Desactivar documento para el registro de personas # Dependencias
-	- HU076 - Mostrar documentos aceptados en el registro de contratos # Dependencias
 	- HU077 - Agregar documento aceptado en el registro de contratos # Dependencias
 	- HU078 - Modificar documento aceptado en el registro de contratos # Dependencias
 	- HU079 - Desactivar documento para el registro de contratos # Dependencias
@@ -184,10 +183,6 @@ Expuesta (PEP)
 		- ![Image.png](/dl/caKTnouupFQ2XDoMhrZqJw?slug=contratos-vector-to-be)
 		- 
 		- * Cuando se ingresa a la opción de Impresión, por default se muestra la fecha de impresión del contrato con el objetivo de realizar la misma impresión de los documentos que se imprimieron en esa fecha.
-	- HU153 - Plantilla solicitud de alta (B y D) # Dependencias
-		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
-		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
-		- HU016 - Registro de **Datos generales** de la persona física y moral
 	- HU154 - Plantilla FATCA # Dependencias
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
@@ -202,6 +197,10 @@ Expuesta (PEP)
 		- HU016 - Registro de **Datos generales** de la persona física y moral
 		- HU018 - Perfilamiento de inversión de prospecto de contratos de PM ó PF
 	- HU157 - Plantilla de entrevista(B y D) # Dependencias
+		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
+		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
+		- HU016 - Registro de **Datos generales** de la persona física y moral
+	- HU153 - Plantilla solicitud de alta (B y D) # Dependencias
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU016 - Registro de **Datos generales** de la persona física y moral

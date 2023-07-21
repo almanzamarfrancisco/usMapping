@@ -7,24 +7,24 @@ process1_names = [  # Prospect registration
     "Catálogo y matriz de configuración",
     "Alta de prospecto",
     "Selección de tipo de contrato",
-    "Registro de segmento de info",
+    "Registro de segmentos",
     "Admin de servicios de internet ",
-    "Alta documentación",
-    "Envío a PLD / Contratos",
+    "Documentación de alta de prospecto",
+    "Validación de PLD",
 ]
 process2_names = [  # Information validation
     "Recepción de prospecto",
     "Validación de prospecto",
     "Asignación de tarjeta de internet",
-    "Validación PLD",
-    "Aceptación de prospecto",
-    "Alta de Contrato",
+    "Validación de PLD",
+    "Validación de prospecto",
+    "Alta de contrato",
     "Envío de Contrato para Firma",
 ]
 process3_names = [  # Signature, activation and digitalizace
     "Recepción de Contrato Firmado",
-    "Activación de Contrato",
-    "Digitalización de Contrato",
+    "Gestión de contrato",
+    "Digitalización de documentos",
 ]
 process4_names = [  # Contract modification
     "Modificación de cliente/contrato",
