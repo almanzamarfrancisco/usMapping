@@ -27,8 +27,8 @@ process3_names = [  # Signature, activation and digitalizace
     "Digitalización de documentos",
 ]
 process4_names = [  # Contract modification
-    "Modificación de cliente/contrato",
     "Tipo de Modificación",
+    "Modificación de cliente/contrato",
     "Digitalización de documentos",
 ]
 

@@ -152,15 +152,15 @@ def checkSyntaxAndGetCleanList(USs: list):
     correct_USs = []
     for i, us in enumerate(USs):
         if not bool(re.match(title_syntax, us['Title'])):
+            # print(us['Title'])
             syntax_title_error.append(us)
         # elif not bool(re.match(description_syntax, us['Description'], re.IGNORECASE)):
         #     syntax_description_error.append(us)
         # elif not bool(re.match(aceptance_criteria_syntax, us['Description'], re.IGNORECASE)):
         #     syntax_aceptance_criteria_error.append(us)
         # elif not bool(re.match(dependencies_syntax, us['Description'], re.IGNORECASE)):
-            syntax_dependencies_error.append(us)
+            # syntax_dependencies_error.append(us)
         else:
-            print(us['Title'])
             correct_USs.append(us)
     return {
         'USs': correct_USs,
@@ -208,14 +208,23 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
         title.attr(label=process_label, style="rounded", rankdir='TB')
         process_names.reverse()
         for i, process_name in enumerate(process_names):
-            title.node(f"{process_label}_PROC_{i}", process_name, shape='cds')
+            # title.node(f"{process_label}_PROC_{i}", process_name, shape='cds')
+            approved_counter = 0
+            not_approved_counter = 0
             for j, us in enumerate(diagram_structure[process_label][process_name]):
-                fillcolor = "#7efccc" if 'Aprobada por Cliente' in us['annotations'] else "#ff7063"
+                if 'Aprobada por Cliente' in us['annotations']:
+                    fillcolor = "#5cb85c"
+                    approved_counter = approved_counter + 1
+                else:
+                    fillcolor = "#ff7063"
+                    not_approved_counter = not_approved_counter + 1
                 title.node(us['title'][:6], us['title'][:6],
                            shape='note', href=f"{us_detail_url}/{us['id']}", style="filled", color=fillcolor)
                 if j > 0:
                     title.edge(diagram_structure[process_label][process_name]
                                [j-1]['title'][:6], us['title'][:6], constraint='true')
+            title.node(
+                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter})", shape='cds')
             if len(diagram_structure[process_label][process_name]):
                 title.edge(f'{process_label}_PROC_{i}',
                            diagram_structure[process_label][process_name][0]['title'][:6], constraint='true')
@@ -258,7 +267,7 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
         rest.edge_attr['style'] = 'invis'
         for i, ru in enumerate(rest_uss):
             if 'Aprobada por Cliente' in ru['annotations']:
-                fillcolor = "#7efccc"
+                fillcolor = "#5cb85c"
                 green.append(ru)
             else:
                 fillcolor = "#ff7063"
@@ -287,5 +296,5 @@ def render(predefined_processes):
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    writeDependenciesFile(USs, releases, features)
+    # writeDependenciesFile(USs, releases, features)
     generateDotDiagram(USs, annotations, predefined_processes)
