@@ -288,12 +288,23 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
 us_detail_url = "https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card"
 
 
-def render(predefined_processes):
+def renderProcessDiagram(predefined_processes):
+    print(f"[I] Rendering process diagram...")
     print(f"[I] Obtaining StoryMap from API...")
     userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
     print(f"[I] Done!")
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    # writeDependenciesFile(USs, releases, features)
     generateDotDiagram(USs, annotations, predefined_processes)
+
+
+def renderDependenciesDiagram():
+    print(f"[I] Rendering dependencies diagram...")
+    print(f"[I] Obtaining StoryMap from API...")
+    userStoriesGotten, releases, features, epics, annotations = getUserStoriesFromAPI().values()
+    print(f"[I] Done!")
+    print(f"[I] Checking syntax...")
+    USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
+    print(f"[I] Done!")
+    writeDependenciesFile(USs, releases, features)

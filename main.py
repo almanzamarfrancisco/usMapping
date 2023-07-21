@@ -62,6 +62,14 @@ class window():
             self.error_label.config(
                 text="Please enter a list of strings in the text area.")
 
+    def remove_from_list(self):
+        predefined_processes.pop()
+        self.listbox.configure(state='normal')
+        self.listbox.delete(1.0, tk.END)
+        self.listbox.insert(tk.END, json.dumps(
+            predefined_processes, indent='  ', ensure_ascii=False)+'\n')
+        self.listbox.configure(state='disabled')
+
     def __init__(self):
         # Create the main Tkinter window
         root = tk.Tk()
@@ -78,6 +86,10 @@ class window():
         # "Add List" button
         add_button = tk.Button(root, text="Add List", command=self.add_list)
         add_button.pack()
+        # "Remove from List" button
+        remove_button = tk.Button(
+            root, text="Remove last from list", command=self.remove_from_list)
+        remove_button.pack()
         # Listbox to display the added lists
         self.listbox = tk.Text(root, width=100)
         self.listbox.pack(pady=10)
@@ -87,9 +99,13 @@ class window():
         # Error label to show any input validation errors
         self.error_label = tk.Label(root, fg="red")
         self.error_label.pack()
-        # Rendering button
-        render_button = tk.Button(root, text="Render", command=partial(
-            makeDiagrams.render, predefined_processes))
+        # Rendering process diagram button
+        render_button = tk.Button(root, text="Render process diagram", command=partial(
+            makeDiagrams.renderProcessDiagram, predefined_processes))
+        render_button.pack()
+        # Rendering dependencies diagram button
+        render_button = tk.Button(
+            root, text="Render dependencies diagram", command=makeDiagrams.renderDependenciesDiagram)
         render_button.pack()
         # Start the Tkinter event loop
         root.mainloop()
