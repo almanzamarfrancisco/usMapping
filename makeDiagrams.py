@@ -161,6 +161,7 @@ def checkSyntaxAndGetCleanList(USs: list):
         # elif not bool(re.match(dependencies_syntax, us['Description'], re.IGNORECASE)):
             # syntax_dependencies_error.append(us)
         else:
+            print(us['Title'])
             correct_USs.append(us)
     return {
         'USs': correct_USs,
