@@ -118,7 +118,8 @@ def writeDependenciesFile(uss, releases, features):
                 if not any(ri['ReleaseId'] == r['ReleaseId'] for ri in added_releases):
                     added_releases.append(r)
                     added_features.append(f)
-                    text = text + f"\n- {f['Title']}\n"
+                    text = text + \
+                        f"\n- {f['Title']} \n"
                 s = f"{us['Description'][dependencies_index.start():]}"
                 s = s.replace('# DEPENDENCIAS', ' ')
                 s = s.replace('\n', '\n\t\t- ')
@@ -151,18 +152,18 @@ def checkSyntaxAndGetCleanList(USs: list):
     syntax_dependencies_error = []
     correct_USs = []
     for i, us in enumerate(USs):
-        if not bool(re.match(title_syntax, us['Title'])):
-            # print(us['Title'])
-            syntax_title_error.append(us)
+        # if not bool(re.match(title_syntax, us['Title'])):
+        # print(us['Title'])
+        # syntax_title_error.append(us)
         # elif not bool(re.match(description_syntax, us['Description'], re.IGNORECASE)):
         #     syntax_description_error.append(us)
         # elif not bool(re.match(aceptance_criteria_syntax, us['Description'], re.IGNORECASE)):
         #     syntax_aceptance_criteria_error.append(us)
         # elif not bool(re.match(dependencies_syntax, us['Description'], re.IGNORECASE)):
-            # syntax_dependencies_error.append(us)
-        else:
-            print(us['Title'])
-            correct_USs.append(us)
+        # syntax_dependencies_error.append(us)
+        # else:
+        # print(us['Title'])
+        correct_USs.append(us)
     return {
         'USs': correct_USs,
         'syntaxError': {
@@ -224,7 +225,7 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
                     title.edge(f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][j-1]['title'][:6]}",
                                f"{process_label}_{process_name}_{us['title'][:6]}", constraint='true')
             title.node(
-                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter})", shape='cds')
+                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter}|T:{approved_counter+not_approved_counter})", shape='cds')
             if len(diagram_structure[process_label][process_name]):
                 title.edge(f'{process_label}_PROC_{i}',
                            f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][0]['title'][:6]}", constraint='true')

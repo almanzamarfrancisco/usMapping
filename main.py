@@ -5,10 +5,11 @@ import json
 
 process1_names = [  # Prospect registration
     "Catálogo y matriz de configuración",
+    "Alta de persona",
     "Alta de prospecto",
     "Selección de tipo de contrato",
     "Registro de segmentos",
-    "Admin de servicios de internet ",
+    "Admin de servicios de internet",
     "Documentación de alta de prospecto",
     "Validación de PLD",
 ]
@@ -19,6 +20,7 @@ process2_names = [  # Information validation
     "Validación de PLD",
     "Aceptación de prospecto",
     "Alta de contrato",
+    "Documentos de alta de contrato"
     "Envío de Contrato para Firma",
 ]
 process3_names = [  # Signature, activation and digitalizace
@@ -27,9 +29,12 @@ process3_names = [  # Signature, activation and digitalizace
     "Digitalización de documentos",
 ]
 process4_names = [  # Contract modification
-    "Tipo de Modificación",
+    "catalogo de tipo de modificación",
     "Modificación de cliente/contrato",
     "Digitalización de documentos",
+]
+process5_names = [
+    "Reportes de contratos",
 ]
 
 predefined_processes = [
@@ -37,6 +42,7 @@ predefined_processes = [
     {'label': 'Validación de información', 'list': process2_names},
     {'label': 'Firma, activación y digitalización', 'list': process3_names},
     {'label': 'Modificación de contrato', 'list': process4_names},
+    {'label': 'Pasos de procesos aún no mapeados', 'list': process5_names},
 ]
 
 

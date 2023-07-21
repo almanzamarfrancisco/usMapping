@@ -1,5 +1,5 @@
 
-- Configuración de parámetros y catálogos(Prioridad 4)
+- Configuración de parámetros y catálogos(Prioridad 4) 
 
 	- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura  
 		- HU001 - Catálogo de Tipos de Figuras para contratos
@@ -18,7 +18,7 @@
 		- HU073 - Agregar documento aceptado en el registro de personas
 		- HU074 - Modificar documento aceptado en el registro de personas
 		- HU075 - Administración de Documentos por figuras
-- Configuración de parámetros y catálogos(Prioridad 4)
+- Configuración de parámetros y catálogos(Prioridad 4) 
 
 	- HU096 - Capturar cuentas de extranjeros FATCA  
 		- HU067 - Asignar figura a una persona
@@ -32,39 +32,6 @@
 	- HU052 - Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
-	- HU137 - Segmento Control de documentación  
-		- HU037 Configuración de segmentos en módulo de personas por Tipo de contrato
-		- HU070 - Configuración de datos por segmento
-		- HU072 - Mostrar documentos aceptados en el registro de personas
-		- HU073 - Agregar documento aceptado en el registro de personas
-		- HU074 - Modificar documento aceptado en el registro de personas
-		- HU075 - Administración de Documentos por figuras
-		- 
-		- NOTA: Las siguientes son **IMAGENES REFERENCIAL, NO SON PANTALLAS FINALES**:
-		- 
-		- IMAGEN 1 Selección de figuras
-		- ![Image.png](/dl/yrfEgZ8hUQ4WdzoKYVDvxQ?slug=modulo-de-contratos-vector)
-		- 
-		- IMAGEN 2 Selección de grupo de documentación
-		- ![Image.png](/dl/SvQNXXS5LORbPDoKYU9_Tw?slug=modulo-de-contratos-vector)
-		- 
-		- IMAGEN 3 Selección de documento
-		- ![Image.png](/dl/lqhWQH8BFhhcSzoKYVACBA?slug=modulo-de-contratos-vector)
-		- 
-		- IMAGEN 4
-		- ![Image.png](/dl/CFraHb7OvqdJHDoKYVBjJA?slug=modulo-de-contratos-vecto)
-		- 
-		- IMAGEN 5 Grupos de contratos para bursatil
-		- ![Image.png](/dl/HGtDn-UZGDnuDDoMgZZh8A?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN 6 Administración de documentos de Bursatil
-		- ![Image.png](/dl/j22HfToQzrUZ4DoMgZmQYw?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN 7 Administración
-		- ![Image.png](/dl/BWWI--N390MxzDoMgZ6Tng?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN Administración de documentos de Divisas
-		- ![Image.png](/dl/pI7JXmLpEEwbKToMgbSKkQ?slug=contratos-vector-to-be)
 	- HU016 - Registro de Datos generales de la persona física y moral  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
@@ -85,6 +52,7 @@
 		- HU014 - Módulo de personas
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU005 - Cuestionario perfil cualitativo
+		- HU007 - Catalogo de Bancos
 	- HU020 - Registro de Domicilio particular de contratos de PF y PM  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
@@ -104,8 +72,8 @@ Expuesta (PEP)
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 	- HU054 - Instrucciones de envío de notificaciones  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
-		- HUXXX - Catalogo de recibo de instrucciones (nuevo)
-		- HUXXX - Catalogo de Envio de documentación (nuevo)
+		- HU170 - Catalogo de recibo de instrucciones (nuevo)
+		- HU171 - Catalogo de Envio de documentación (nuevo)
 		- HU-Anexo-EP001 - Administrar Modulo de personas
 		- HU-161  Administración de catalogo de **la información de los apoderados por sucursal**
 	- HU118 - Captura de **beneficiarios** de Bursatil  
@@ -138,6 +106,13 @@ Expuesta (PEP)
 		- ![Image.png](/dl/xw6Ye-bjJgjrPzoMXWOuxg?slug=contratos-vector-to-be)
 		- 
 		- Nota: el registro previo de los segmentos de las figuras.
+	- HU137 - Segmento Control de documentación  
+		- HU037 Configuración de segmentos en módulo de personas por Tipo de contrato
+		- HU070 - Configuración de datos por segmento
+		- HU072 - Mostrar documentos aceptados en el registro de personas
+		- HU073 - Agregar documento aceptado en el registro de personas
+		- HU074 - Modificar documento aceptado en el registro de personas
+		- HU075 - Administración de Documentos por figuras
 	- HU073 - Agregar documento aceptado en el registro de personas # Dependencias
 	- HU074 - Modificar documento aceptado en el registro de personas # Dependencias
 	- HU075 - Desactivar documento para el registro de personas # Dependencias
@@ -152,33 +127,6 @@ Expuesta (PEP)
 		- HU155 - Plantilla aviso de privacidad(B y D)
 		- HU156 - Plantilla de Cuestionario de perfil de inversión (B)
 		- HU157 - Plantilla de entrevista(B y D)
-		- 
-		- NOTA: Las siguientes son **IMAGENES REFERENCIAL, NO SON PANTALLAS FINALES**:
-		- 
-		- IMAGEN 1: Modal para imprimir el alta del prospecto CIB
-		- ![Image.png](/dl/7vlVFMRKPSOi1joMVM6yRQ?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN 2: Modal para imprimir el alta del prospecto Divisas
-		- ![Image.png](/dl/zNjIw9r__pK4bjoMfR6jUg?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN 3: Correo con los documentos de alta de prospecto
-		- ![Image.png](/dl/v4xL8czVwLJboDoJ2kmU5Q?slug=modulo-de-contratos-vector)
-		- 
-		- IMAGEN 4: Error al generar los documentos de alta de prospecto CIB
-		- ![Image.png](/dl/aJCAkHDho9Fd8zoMVMudtA?slug=contratos-vector-to-be)
-		- 
-		- 
-		- 
-		- IMAGEN 5: para reimprimir documetos de CIB
-		- ![Image.png](/dl/IDWIr4GVC_i5hzoJ7kMcgg?slug=modulo-de-contratos-vector)~~~~
-		- 
-		- IMAGEN 6
-		- ![Image.png](/dl/IXN33KOJWj87JDoMhrZAlg?slug=contratos-vector-to-be)
-		- 
-		- IMAGEN 7
-		- ![Image.png](/dl/caKTnouupFQ2XDoMhrZqJw?slug=contratos-vector-to-be)
-		- 
-		- * Cuando se ingresa a la opción de Impresión, por default se muestra la fecha de impresión del contrato con el objetivo de realizar la misma impresión de los documentos que se imprimieron en esa fecha.
 	- HU154 - Plantilla FATCA # Dependencias
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
@@ -206,9 +154,6 @@ Expuesta (PEP)
 	- HU064 - Consulta de contratos (Módulo de contratos)  
 	- HU051 - Imprimir los documentos del Alta de contrato Bursatil # Dependencias
 		- HU008 - Solicitud para el anexo del servicio de SERVICIO DE PROFUNDIDAD
-		- 
-		- IMAGEN 1 Pantalla de impresión de documentos
-		- ![Image.png](/dl/-S1D8oYw0GngzzoKp8KgwQ?slug=modulo-de-contratos-vector)
 	- HU135 - Ver 
  detalle/radiografía del prospecto en módulo de contratos  
 		- HU069 - Catálogo de segmentos
