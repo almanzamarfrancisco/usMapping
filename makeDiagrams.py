@@ -296,5 +296,5 @@ def render(predefined_processes):
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    # writeDependenciesFile(USs, releases, features)
+    writeDependenciesFile(USs, releases, features)
     generateDotDiagram(USs, annotations, predefined_processes)

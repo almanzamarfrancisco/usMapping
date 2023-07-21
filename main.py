@@ -41,16 +41,18 @@ predefined_processes = [
 
 
 class window():
+
     def add_list(self):
         self.input_text = self.text_area.get("1.0", tk.END).strip()
         if self.input_text:
             # Split the input text by lines and add the list to the main list
-            self.new_list = [{'label': self.process_label_entry.get(
+            self.new_dict = [{'label': self.process_label_entry.get(
             ), 'list': [item.strip() for item in self.input_text.split("\n")]}]
-            self.main_list.append(self.new_list)
+            predefined_processes.extend(self.new_dict)
             self.listbox.configure(state='normal')
+            self.listbox.delete(1.0, tk.END)
             self.listbox.insert(tk.END, json.dumps(
-                self.new_list, indent='  ', ensure_ascii=False)+'\n')
+                predefined_processes, indent='  ', ensure_ascii=False)+'\n')
             self.listbox.configure(state='disabled')
             # Clear the text area after adding the list
             self.text_area.delete("1.0", tk.END)
