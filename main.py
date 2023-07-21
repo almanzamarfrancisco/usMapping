@@ -17,7 +17,7 @@ process2_names = [  # Information validation
     "Validación de prospecto",
     "Asignación de tarjeta de internet",
     "Validación de PLD",
-    "Validación de prospecto",
+    "Aceptación de prospecto",
     "Alta de contrato",
     "Envío de Contrato para Firma",
 ]
@@ -34,9 +34,9 @@ process4_names = [  # Contract modification
 
 predefined_processes = [
     {'label': 'Alta de prospecto', 'list': process1_names},
-    # {'label': 'Validación de información', 'list': process2_names},
-    # {'label': 'Firma, activación y digitalización', 'list': process3_names},
-    # {'label': 'Modificación de contrato', 'list': process4_names},
+    {'label': 'Validación de información', 'list': process2_names},
+    {'label': 'Firma, activación y digitalización', 'list': process3_names},
+    {'label': 'Modificación de contrato', 'list': process4_names},
 ]
 
 

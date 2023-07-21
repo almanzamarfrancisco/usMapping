@@ -208,7 +208,6 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
         title.attr(label=process_label, style="rounded", rankdir='TB')
         process_names.reverse()
         for i, process_name in enumerate(process_names):
-            # title.node(f"{process_label}_PROC_{i}", process_name, shape='cds')
             approved_counter = 0
             not_approved_counter = 0
             for j, us in enumerate(diagram_structure[process_label][process_name]):
@@ -218,16 +217,16 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
                 else:
                     fillcolor = "#ff7063"
                     not_approved_counter = not_approved_counter + 1
-                title.node(us['title'][:6], us['title'][:6],
+                title.node(f"{process_label}_{process_name}_{us['title'][:6]}", f"{us['title'][:6]}",
                            shape='note', href=f"{us_detail_url}/{us['id']}", style="filled", color=fillcolor)
                 if j > 0:
-                    title.edge(diagram_structure[process_label][process_name]
-                               [j-1]['title'][:6], us['title'][:6], constraint='true')
+                    title.edge(f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][j-1]['title'][:6]}",
+                               f"{process_label}_{process_name}_{us['title'][:6]}", constraint='true')
             title.node(
                 f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter})", shape='cds')
             if len(diagram_structure[process_label][process_name]):
                 title.edge(f'{process_label}_PROC_{i}',
-                           diagram_structure[process_label][process_name][0]['title'][:6], constraint='true')
+                           f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][0]['title'][:6]}", constraint='true')
             # if i > 0:
             #     title.edge(f'{process_label}_PROC_{i}',
             #                f'{process_label}_PROC_{i-1}', constraint='false')
@@ -296,5 +295,5 @@ def render(predefined_processes):
     print(f"[I] Checking syntax...")
     USs, error_USs = checkSyntaxAndGetCleanList(userStoriesGotten).values()
     print(f"[I] Done!")
-    writeDependenciesFile(USs, releases, features)
+    # writeDependenciesFile(USs, releases, features)
     generateDotDiagram(USs, annotations, predefined_processes)
