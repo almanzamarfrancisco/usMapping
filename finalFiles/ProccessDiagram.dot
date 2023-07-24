@@ -1,6 +1,7 @@
 // US Process model relationships
 digraph G {
-	graph [rankdir=TB]
+	graph [bgcolor="#EFF1F5" rankdir=TB]
+	edge [color="#061626"]
 	subgraph "cluster_Alta de prospecto" {
 		label="Alta de prospecto" rankdir=TB style=rounded
 		"Alta de prospecto_Validación de PLD_HU121 " [label="HU121 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/anEH8lAew-gw4ToL9zG3mQ" shape=note style=filled]
@@ -26,7 +27,7 @@ digraph G {
 		"Alta de prospecto_Validación de PLD_HUAAA " -> "Alta de prospecto_Validación de PLD_HUBBB " [constraint=true]
 		"Alta de prospecto_Validación de PLD_HU034 " [label="HU034 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/fmXNBbV7suyMNzoLE5UvVA" shape=note style=filled]
 		"Alta de prospecto_Validación de PLD_HUBBB " -> "Alta de prospecto_Validación de PLD_HU034 " [constraint=true]
-		"Alta de prospecto_PROC_0" [label="Validación de PLD (√0|X12|T:12)" shape=cds]
+		"Alta de prospecto_PROC_0" [label="Validación de PLD (√0|X12|T:12)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_0" -> "Alta de prospecto_Validación de PLD_HU121 " [constraint=true]
 		"Alta de prospecto_Documentación de alta de prospecto_HU101 " [label="HU101 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/rd7XSys6MC9V-ToLzl-vhQ" shape=note style=filled]
 		"Alta de prospecto_Documentación de alta de prospecto_HU102 " [label="HU102 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/BwAVDOMXOx_Z2zoLzl-sfg" shape=note style=filled]
@@ -65,7 +66,7 @@ digraph G {
 		"Alta de prospecto_Documentación de alta de prospecto_HU156 " -> "Alta de prospecto_Documentación de alta de prospecto_HU157 " [constraint=true]
 		"Alta de prospecto_Documentación de alta de prospecto_HU153 " [label="HU153 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/dIkc2jluRmwbyToMYcVy5A" shape=note style=filled]
 		"Alta de prospecto_Documentación de alta de prospecto_HU157 " -> "Alta de prospecto_Documentación de alta de prospecto_HU153 " [constraint=true]
-		"Alta de prospecto_PROC_1" [label="Documentación de alta de prospecto (√13|X6|T:19)" shape=cds]
+		"Alta de prospecto_PROC_1" [label="Documentación de alta de prospecto (√13|X6|T:19)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_1" -> "Alta de prospecto_Documentación de alta de prospecto_HU101 " [constraint=true]
 		"Alta de prospecto_Admin de servicios de internet_HU008 " [label="HU008 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/syvDN_vMHBQadDoLQzF4Lg" shape=note style=filled]
 		"Alta de prospecto_Admin de servicios de internet_HU007 " [label="HU007 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/7olZq0cf0V5cWzoLQzDbwQ" shape=note style=filled]
@@ -96,7 +97,7 @@ digraph G {
 		"Alta de prospecto_Admin de servicios de internet_HUXXX-" -> "Alta de prospecto_Admin de servicios de internet_HUXXX-" [constraint=true]
 		"Alta de prospecto_Admin de servicios de internet_HUXXX " [label="HUXXX " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/is8-cslX2_9DOjoLQzF37w" shape=note style=filled]
 		"Alta de prospecto_Admin de servicios de internet_HUXXX-" -> "Alta de prospecto_Admin de servicios de internet_HUXXX " [constraint=true]
-		"Alta de prospecto_PROC_2" [label="Admin de servicios de internet (√0|X15|T:15)" shape=cds]
+		"Alta de prospecto_PROC_2" [label="Admin de servicios de internet (√0|X15|T:15)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_2" -> "Alta de prospecto_Admin de servicios de internet_HU008 " [constraint=true]
 		"Alta de prospecto_Registro de segmentos_HU096 " [label="HU096 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/lWHexAi8lpOmkzoLw7Nyyw" shape=note style=filled]
 		"Alta de prospecto_Registro de segmentos_HU019 " [label="HU019 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/S4HRwoy1zgkxUzoK_z8brw" shape=note style=filled]
@@ -177,7 +178,7 @@ digraph G {
 		"Alta de prospecto_Registro de segmentos_HU112 " -> "Alta de prospecto_Registro de segmentos_HUXXX " [constraint=true]
 		"Alta de prospecto_Registro de segmentos_HU134 " [label="HU134 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/8O1ovjNIVQXpJzoL1wtZ-Q" shape=note style=filled]
 		"Alta de prospecto_Registro de segmentos_HUXXX " -> "Alta de prospecto_Registro de segmentos_HU134 " [constraint=true]
-		"Alta de prospecto_PROC_3" [label="Registro de segmentos (√26|X14|T:40)" shape=cds]
+		"Alta de prospecto_PROC_3" [label="Registro de segmentos (√26|X14|T:40)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_3" -> "Alta de prospecto_Registro de segmentos_HU096 " [constraint=true]
 		"Alta de prospecto_Selección de tipo de contrato_HU038 " [label="HU038 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/zrMgiQx0ZcCQLjoLGmaKnA" shape=note style=filled]
 		"Alta de prospecto_Selección de tipo de contrato_HU037 " [label="HU037 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/Gg81UzCPj-JnGDoLE_PwNA" shape=note style=filled]
@@ -188,7 +189,7 @@ digraph G {
 		"Alta de prospecto_Selección de tipo de contrato_HU036 " -> "Alta de prospecto_Selección de tipo de contrato_HU035 " [constraint=true]
 		"Alta de prospecto_Selección de tipo de contrato_HU039 " [label="HU039 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/7wT-YGU1WXTiqDoLE_PyIQ" shape=note style=filled]
 		"Alta de prospecto_Selección de tipo de contrato_HU035 " -> "Alta de prospecto_Selección de tipo de contrato_HU039 " [constraint=true]
-		"Alta de prospecto_PROC_4" [label="Selección de tipo de contrato (√0|X5|T:5)" shape=cds]
+		"Alta de prospecto_PROC_4" [label="Selección de tipo de contrato (√0|X5|T:5)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_4" -> "Alta de prospecto_Selección de tipo de contrato_HU038 " [constraint=true]
 		"Alta de prospecto_Alta de prospecto_HU066 " [label="HU066 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/khitV_8b_ivgWjoLXmnkxQ" shape=note style=filled]
 		"Alta de prospecto_Alta de prospecto_HU057 " [label="HU057 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/RrYw2zca0uQBizoLN9J7EQ" shape=note style=filled]
@@ -199,12 +200,12 @@ digraph G {
 		"Alta de prospecto_Alta de prospecto_HU067 " -> "Alta de prospecto_Alta de prospecto_HU135 " [constraint=true]
 		"Alta de prospecto_Alta de prospecto_HU163 " [label="HU163 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/GEACZ7WxL38hjjoMbNjXXA" shape=note style=filled]
 		"Alta de prospecto_Alta de prospecto_HU135 " -> "Alta de prospecto_Alta de prospecto_HU163 " [constraint=true]
-		"Alta de prospecto_PROC_5" [label="Alta de prospecto (√4|X1|T:5)" shape=cds]
+		"Alta de prospecto_PROC_5" [label="Alta de prospecto (√4|X1|T:5)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_5" -> "Alta de prospecto_Alta de prospecto_HU066 " [constraint=true]
 		"Alta de prospecto_Alta de persona_HU066 " [label="HU066 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/khitV_8b_ivgWjoLXmnkxQ" shape=note style=filled]
 		"Alta de prospecto_Alta de persona_HU099 " [label="HU099 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/rUjvXbQgWE2lNzoLyHQCdw" shape=note style=filled]
 		"Alta de prospecto_Alta de persona_HU066 " -> "Alta de prospecto_Alta de persona_HU099 " [constraint=true]
-		"Alta de prospecto_PROC_6" [label="Alta de persona (√2|X0|T:2)" shape=cds]
+		"Alta de prospecto_PROC_6" [label="Alta de persona (√2|X0|T:2)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_6" -> "Alta de prospecto_Alta de persona_HU066 " [constraint=true]
 		"Alta de prospecto_Catálogo y matriz de configuración_HU091 " [label="HU091 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/qh3C3a6Ts6Yz6joLpYcLIw" shape=note style=filled]
 		"Alta de prospecto_Catálogo y matriz de configuración_HU008 " [label="HU008 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/Ef224LjAPVhGBjoLQgUgnQ" shape=note style=filled]
@@ -319,16 +320,16 @@ digraph G {
 		"Alta de prospecto_Catálogo y matriz de configuración_* Cata" -> "Alta de prospecto_Catálogo y matriz de configuración_* Cata" [constraint=true]
 		"Alta de prospecto_Catálogo y matriz de configuración_HU-161" [label="HU-161" color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/NrjbbdqwmH0eajoMhpOmzw" shape=note style=filled]
 		"Alta de prospecto_Catálogo y matriz de configuración_* Cata" -> "Alta de prospecto_Catálogo y matriz de configuración_HU-161" [constraint=true]
-		"Alta de prospecto_PROC_7" [label="Catálogo y matriz de configuración (√12|X45|T:57)" shape=cds]
+		"Alta de prospecto_PROC_7" [label="Catálogo y matriz de configuración (√12|X45|T:57)" bgcolor="#3B5FA6" shape=cds]
 		"Alta de prospecto_PROC_7" -> "Alta de prospecto_Catálogo y matriz de configuración_HU091 " [constraint=true]
 	}
 	subgraph "cluster_Validación de información" {
 		label="Validación de información" rankdir=TB style=rounded
-		"Validación de información_PROC_0" [label="Documentos de alta de contratoEnvío de Contrato para Firma (√0|X0|T:0)" shape=cds]
+		"Validación de información_PROC_0" [label="Documentos de alta de contratoEnvío de Contrato para Firma (√0|X0|T:0)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_Alta de contrato_HU117 " [label="HU117 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/PFP_mtEob6gLFToL9gCiUg" shape=note style=filled]
-		"Validación de información_PROC_1" [label="Alta de contrato (√1|X0|T:1)" shape=cds]
+		"Validación de información_PROC_1" [label="Alta de contrato (√1|X0|T:1)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_PROC_1" -> "Validación de información_Alta de contrato_HU117 " [constraint=true]
-		"Validación de información_PROC_2" [label="Aceptación de prospecto (√0|X0|T:0)" shape=cds]
+		"Validación de información_PROC_2" [label="Aceptación de prospecto (√0|X0|T:0)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_Validación de PLD_HU121 " [label="HU121 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/anEH8lAew-gw4ToL9zG3mQ" shape=note style=filled]
 		"Validación de información_Validación de PLD_HU122 " [label="HU122 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/DsB9HjBA49uimToMWWBz5g" shape=note style=filled]
 		"Validación de información_Validación de PLD_HU121 " -> "Validación de información_Validación de PLD_HU122 " [constraint=true]
@@ -352,7 +353,7 @@ digraph G {
 		"Validación de información_Validación de PLD_HUAAA " -> "Validación de información_Validación de PLD_HUBBB " [constraint=true]
 		"Validación de información_Validación de PLD_HU034 " [label="HU034 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/fmXNBbV7suyMNzoLE5UvVA" shape=note style=filled]
 		"Validación de información_Validación de PLD_HUBBB " -> "Validación de información_Validación de PLD_HU034 " [constraint=true]
-		"Validación de información_PROC_3" [label="Validación de PLD (√0|X12|T:12)" shape=cds]
+		"Validación de información_PROC_3" [label="Validación de PLD (√0|X12|T:12)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_PROC_3" -> "Validación de información_Validación de PLD_HU121 " [constraint=true]
 		"Validación de información_Asignación de tarjeta de internet_HU130 " [label="HU130 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/chxAin2OpgCVPDoLQzIauw" shape=note style=filled]
 		"Validación de información_Asignación de tarjeta de internet_HU131 " [label="HU131 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/8GQzd7nymkV_sToLQyEjWQ" shape=note style=filled]
@@ -361,7 +362,7 @@ digraph G {
 		"Validación de información_Asignación de tarjeta de internet_HU131 " -> "Validación de información_Asignación de tarjeta de internet_HU132 " [constraint=true]
 		"Validación de información_Asignación de tarjeta de internet_HU133 " [label="HU133 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/5J37mjsf0CnDPDoLQyEqAA" shape=note style=filled]
 		"Validación de información_Asignación de tarjeta de internet_HU132 " -> "Validación de información_Asignación de tarjeta de internet_HU133 " [constraint=true]
-		"Validación de información_PROC_4" [label="Asignación de tarjeta de internet (√0|X4|T:4)" shape=cds]
+		"Validación de información_PROC_4" [label="Asignación de tarjeta de internet (√0|X4|T:4)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_PROC_4" -> "Validación de información_Asignación de tarjeta de internet_HU130 " [constraint=true]
 		"Validación de información_Validación de prospecto_HU144 " [label="HU144 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/G_oQn2Ot7UCNpToMPgFHbQ" shape=note style=filled]
 		"Validación de información_Validación de prospecto_Desblo" [label=Desblo color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/VzCobE8xoWAGUDoMgmsKMw" shape=note style=filled]
@@ -370,14 +371,14 @@ digraph G {
 		"Validación de información_Validación de prospecto_Desblo" -> "Validación de información_Validación de prospecto_HU050 " [constraint=true]
 		"Validación de información_Validación de prospecto_Activa" [label=Activa color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/vquq4NXD7dV9vjoMZE7Eag" shape=note style=filled]
 		"Validación de información_Validación de prospecto_HU050 " -> "Validación de información_Validación de prospecto_Activa" [constraint=true]
-		"Validación de información_PROC_5" [label="Validación de prospecto (√1|X3|T:4)" shape=cds]
+		"Validación de información_PROC_5" [label="Validación de prospecto (√1|X3|T:4)" bgcolor="#3B5FA6" shape=cds]
 		"Validación de información_PROC_5" -> "Validación de información_Validación de prospecto_HU144 " [constraint=true]
-		"Validación de información_PROC_6" [label="Recepción de prospecto (√0|X0|T:0)" shape=cds]
+		"Validación de información_PROC_6" [label="Recepción de prospecto (√0|X0|T:0)" bgcolor="#3B5FA6" shape=cds]
 	}
 	subgraph "cluster_Firma, activación y digitalización" {
 		label="Firma, activación y digitalización" rankdir=TB style=rounded
 		"Firma, activación y digitalización_Digitalización de documentos_HU055 " [label="HU055 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/VzthzXW5eUEq_DoLGPLnew" shape=note style=filled]
-		"Firma, activación y digitalización_PROC_0" [label="Digitalización de documentos (√0|X1|T:1)" shape=cds]
+		"Firma, activación y digitalización_PROC_0" [label="Digitalización de documentos (√0|X1|T:1)" bgcolor="#3B5FA6" shape=cds]
 		"Firma, activación y digitalización_PROC_0" -> "Firma, activación y digitalización_Digitalización de documentos_HU055 " [constraint=true]
 		"Firma, activación y digitalización_Gestión de contrato_HU116 " [label="HU116 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/TWjIZyCaQ98VSzoL9eiceQ" shape=note style=filled]
 		"Firma, activación y digitalización_Gestión de contrato_HU064 " [label="HU064 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/38JnOZznuJXpPzoLPTEdYQ" shape=note style=filled]
@@ -386,14 +387,14 @@ digraph G {
 		"Firma, activación y digitalización_Gestión de contrato_HU064 " -> "Firma, activación y digitalización_Gestión de contrato_HU115 " [constraint=true]
 		"Firma, activación y digitalización_Gestión de contrato_HU164 " [label="HU164 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/ct1fB_92oJLBaDoMhjv4ag" shape=note style=filled]
 		"Firma, activación y digitalización_Gestión de contrato_HU115 " -> "Firma, activación y digitalización_Gestión de contrato_HU164 " [constraint=true]
-		"Firma, activación y digitalización_PROC_1" [label="Gestión de contrato (√3|X1|T:4)" shape=cds]
+		"Firma, activación y digitalización_PROC_1" [label="Gestión de contrato (√3|X1|T:4)" bgcolor="#3B5FA6" shape=cds]
 		"Firma, activación y digitalización_PROC_1" -> "Firma, activación y digitalización_Gestión de contrato_HU116 " [constraint=true]
-		"Firma, activación y digitalización_PROC_2" [label="Recepción de Contrato Firmado (√0|X0|T:0)" shape=cds]
+		"Firma, activación y digitalización_PROC_2" [label="Recepción de Contrato Firmado (√0|X0|T:0)" bgcolor="#3B5FA6" shape=cds]
 	}
 	subgraph "cluster_Modificación de contrato" {
 		label="Modificación de contrato" rankdir=TB style=rounded
 		"Modificación de contrato_Digitalización de documentos_HU055 " [label="HU055 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/VzthzXW5eUEq_DoLGPLnew" shape=note style=filled]
-		"Modificación de contrato_PROC_0" [label="Digitalización de documentos (√0|X1|T:1)" shape=cds]
+		"Modificación de contrato_PROC_0" [label="Digitalización de documentos (√0|X1|T:1)" bgcolor="#3B5FA6" shape=cds]
 		"Modificación de contrato_PROC_0" -> "Modificación de contrato_Digitalización de documentos_HU055 " [constraint=true]
 		"Modificación de contrato_Modificación de cliente/contrato_HU106 " [label="HU106 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/2nCL5SGHL9GHqzoLzmwoPw" shape=note style=filled]
 		"Modificación de contrato_Modificación de cliente/contrato_HU068 " [label="HU068 " color="#5cb85c" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/K-uNAd31jnRnODoLW4NgGw" shape=note style=filled]
@@ -550,22 +551,22 @@ digraph G {
 		"Modificación de contrato_Modificación de cliente/contrato_HUXXX-" -> "Modificación de contrato_Modificación de cliente/contrato_HUXXX " [constraint=true]
 		"Modificación de contrato_Modificación de cliente/contrato_HU165 " [label="HU165 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/uQ7HuJ2X7h2UBDoMhjv4Ww" shape=note style=filled]
 		"Modificación de contrato_Modificación de cliente/contrato_HUXXX " -> "Modificación de contrato_Modificación de cliente/contrato_HU165 " [constraint=true]
-		"Modificación de contrato_PROC_1" [label="Modificación de cliente/contrato (√3|X75|T:78)" shape=cds]
+		"Modificación de contrato_PROC_1" [label="Modificación de cliente/contrato (√3|X75|T:78)" bgcolor="#3B5FA6" shape=cds]
 		"Modificación de contrato_PROC_1" -> "Modificación de contrato_Modificación de cliente/contrato_HU106 " [constraint=true]
 		"Modificación de contrato_catalogo de tipo de modificación_HU127 " [label="HU127 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/ddJ4cX1vuAmFYToL_I5urA" shape=note style=filled]
 		"Modificación de contrato_catalogo de tipo de modificación_HU107 " [label="HU107 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/vnn2UNkRT_DECzoL02R5jw" shape=note style=filled]
 		"Modificación de contrato_catalogo de tipo de modificación_HU127 " -> "Modificación de contrato_catalogo de tipo de modificación_HU107 " [constraint=true]
 		"Modificación de contrato_catalogo de tipo de modificación_HU105 " [label="HU105 " color="#ff7063" href="https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/TcAy8W33FJi4QzoLzmj5fA" shape=note style=filled]
 		"Modificación de contrato_catalogo de tipo de modificación_HU107 " -> "Modificación de contrato_catalogo de tipo de modificación_HU105 " [constraint=true]
-		"Modificación de contrato_PROC_2" [label="catalogo de tipo de modificación (√0|X3|T:3)" shape=cds]
+		"Modificación de contrato_PROC_2" [label="catalogo de tipo de modificación (√0|X3|T:3)" bgcolor="#3B5FA6" shape=cds]
 		"Modificación de contrato_PROC_2" -> "Modificación de contrato_catalogo de tipo de modificación_HU127 " [constraint=true]
 	}
 	subgraph "cluster_Pasos de procesos aún no mapeados" {
 		label="Pasos de procesos aún no mapeados" rankdir=TB style=rounded
-		"Pasos de procesos aún no mapeados_PROC_0" [label="Reportes de contratos (√0|X0|T:0)" shape=cds]
+		"Pasos de procesos aún no mapeados_PROC_0" [label="Reportes de contratos (√0|X0|T:0)" bgcolor="#3B5FA6" shape=cds]
 	}
-	"Modificación de contrato_PROC_0" -> "Pasos de procesos aún no mapeados_PROC_0" [style=invis]
-	"Firma, activación y digitalización_PROC_0" -> "Modificación de contrato_PROC_2" [style=invis]
-	"Validación de información_PROC_0" -> "Firma, activación y digitalización_PROC_2" [style=invis]
-	"Alta de prospecto_PROC_0" -> "Validación de información_PROC_6" [style=invis]
+	"Modificación de contrato_PROC_0" -> "Pasos de procesos aún no mapeados_PROC_0"
+	"Firma, activación y digitalización_PROC_0" -> "Modificación de contrato_PROC_2"
+	"Validación de información_PROC_0" -> "Firma, activación y digitalización_PROC_2"
+	"Alta de prospecto_PROC_0" -> "Validación de información_PROC_6"
 }

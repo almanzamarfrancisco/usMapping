@@ -225,7 +225,7 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
                     title.edge(f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][j-1]['title'][:6]}",
                                f"{process_label}_{process_name}_{us['title'][:6]}", constraint='true')
             title.node(
-                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter}|T:{approved_counter+not_approved_counter})", shape='cds')
+                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter}|T:{approved_counter+not_approved_counter})", shape='cds', bgcolor="#3B5FA6")
             if len(diagram_structure[process_label][process_name]):
                 title.edge(f'{process_label}_PROC_{i}',
                            f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][0]['title'][:6]}", constraint='true')
@@ -240,7 +240,8 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
     print(f"[I] Getting diagram structure...")
     print(f"[I] Making graphviz code...")
 
-    dot = graphviz.Digraph('G', comment='US Process model relationships')
+    dot = graphviz.Digraph('G', comment='US Process model relationships', graph_attr=dict(
+        bgcolor='#EFF1F5'), edge_attr=dict(color="#061626"))
     dot.graph_attr['rankdir'] = 'TB'
     for i, pl in enumerate(proccess_list):
         rus = writeProcessDotDiagram(
@@ -253,14 +254,17 @@ def generateDotDiagram(USs, annotations, proccess_list: list[dict]):
         if i < len(proccess_list)-1:
             # print(f"{pl['label']}_PROC_{len(pl['list'])-1} -> {proccess_list[i+1]['label']}_PROC_0")
             dot.edge(f"{proccess_list[i+1]['label']}_PROC_0",
-                     f"{pl['label']}_PROC_{len(pl['list'])-1}", style='invis')
+                     f"{pl['label']}_PROC_{len(pl['list'])-1}")  # style='invis'
+            # dot.edge_attr['color'] = "#FEF79D"
 
     dot.view(filename='ProccessDiagram.dot',
              directory='./finalFiles', cleanup=True, quiet=False)
     with open("./finalFiles/ProccessDiagram.dot", "w+") as diagram_file:
         diagram_file.write(dot.source)
 
-    second_dot = graphviz.Digraph('H', comment='User Stories without process')
+    second_dot = graphviz.Digraph(
+        'H', comment='User Stories without process', graph_attr=dict(
+            bgcolor='#EFF1F5'), edge_attr=dict(color="#FEF79D"))
     with second_dot.subgraph(name=f"cluster_rest", graph_attr=dict(rankdir='LR', rank="max")) as rest:
         green = []
         red = []
