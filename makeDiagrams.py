@@ -119,11 +119,14 @@ def writeDependenciesFile(uss, releases, features):
                     added_releases.append(r)
                     added_features.append(f)
                     text = text + \
-                        f"\n- {f['Title']} \n"
+                        f"\n- [{f['Title']}]({us_detail_url}/{us['Id']}) \n"
                 s = f"{us['Description'][dependencies_index.start():]}"
-                s = s.replace('# DEPENDENCIAS', ' ')
+                s = s.replace('# DEPENDENCIAS', ' ', re.IGNORECASE)
                 s = s.replace('\n', '\n\t\t- ')
-                text = text + f"\n\t- {us['Title']} {s}"
+                # TODO: Search dependency user story Id and place the hyper link to Stories On Board
+                text = text + \
+                    f"\n\t- [{us['Title']}]({us_detail_url}/{us['Id']}) {s}".replace(
+                        '# Dependencias', ' ', re.IGNORECASE)
         # print(text)
         # print(len(features_involved))
         relationshipfile.write(text)
@@ -225,7 +228,7 @@ def writeProcessDotDiagram(dot, USs, annotations, process_names, process_label: 
                     title.edge(f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][j-1]['title'][:6]}",
                                f"{process_label}_{process_name}_{us['title'][:6]}", constraint='true')
             title.node(
-                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter}|T:{approved_counter+not_approved_counter})", shape='cds', bgcolor="#3B5FA6")
+                f"{process_label}_PROC_{i}", f"{process_name} (√{approved_counter}|X{not_approved_counter}|T:{approved_counter+not_approved_counter})", shape='cds', bgcolor="#3B5FA6", )
             if len(diagram_structure[process_label][process_name]):
                 title.edge(f'{process_label}_PROC_{i}',
                            f"{process_label}_{process_name}_{diagram_structure[process_label][process_name][0]['title'][:6]}", constraint='true')

@@ -1,16 +1,23 @@
 
-- Configuración de parámetros y catálogos(Prioridad 4) 
+- [Configuración de parámetros y catálogos(Prioridad 4)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/J9TW7cAZ0pLdPjoLE5vUjA) 
 
-	- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura  
-		- HU001 - Catálogo de Tipos de Figuras para contratos
-		- HU069 - Catálogo de segmentos
-	- HU070 - Configuración de datos por segmento  
-		- HU071 - Catálogo de tipos de persona
-		- HU069 - Catálogo de segmentos
-	- HU057 - Administración de personas en módulo de personas  
+	- [HU001-Catálogo de Tipos de Figuras para contratos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/J9TW7cAZ0pLdPjoLE5vUjA)  
+		- Sin dependencias
+	- [HU002-Configuración de segmentos en módulo de personas por Tipo de figura](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/9asNDE5yQcNinDoLE5vZrg)  
+		- 
+		- 1.- https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/J9TW7cAZ0pLdPjoLE5vUjA
+		- 
+		- 2.- https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/U678SYFf8x9_gToLUTMNjQ
+	- [HU069-Catálogo de segmentos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/U678SYFf8x9_gToLUTMNjQ)  
+		- Sin dependencias
+	- [HU070-Configuración de datos por segmento](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/a5OFmsoRzIWPnToLZ0W6Bg)  
+		- https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/zrCd7OO3A7yOlDoLhPIBtA
+		- 
+		- https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/U678SYFf8x9_gToLUTMNjQ
+	- [HU057-Administración de personas en módulo de personas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/RrYw2zca0uQBizoLN9J7EQ)  
 		- HU001 - Catálogo de Tipos de participantes(Figuras)
 		- HUXXX - Catálogo de sexo
-	- HU067 - Alta de prospecto  
+	- [HU067-Alta de prospecto](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/UTa9_TOVUer-3ToMHwLODQ)  
 		- HU057 - Administración de personas en módulo de personas
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
 		- HU070 - Configuración de datos por segmento
@@ -18,86 +25,82 @@
 		- HU073 - Agregar documento aceptado en el registro de personas
 		- HU074 - Modificar documento aceptado en el registro de personas
 		- HU075 - Administración de Documentos por figuras
-- Configuración de parámetros y catálogos(Prioridad 4) 
+- [Configuración de parámetros y catálogos(Prioridad 4)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/lWHexAi8lpOmkzoLw7Nyyw) 
 
-	- HU096 - Capturar cuentas de extranjeros FATCA  
+	- [HU096-Capturar cuentas de extranjeros FATCA](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/lWHexAi8lpOmkzoLw7Nyyw)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
 		- HU028 - Registro de Estructura accionaria para persona moral
-	- HU019 - Perfilamiento cualitativo de contratos de PF ó PM, considerar como mejora con la HU anterior para enviar en la misma liga es cuestionario al cliente  
+	- [HU019-Perfilamiento cualitativo de contratos de PF ó PM](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/S4HRwoy1zgkxUzoK_z8brw)  
 		- HU014 - Módulo de personas
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU005 -Cuestionario perfil cualitativo
-	- HU052 - Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF  
+	- [HU052-Capturar la información de Fideicomiso cuando se identifique que es un tipo de contrato de fideicomiso PM y PF](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/eXxUDlL00I97bjoLE5Uvkg)  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
-	- HU016 - Registro de Datos generales de la persona física y moral  
+	- [HU016-Registro de Datos generales de la persona física y moral](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/AVs4SY9es6X9sDoK-jyZ2Q)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
-	- HU065 - Datos generales para un prospecto  
+	- [HU065-Datos generales para un prospecto](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/Oh68TLm3F1doqToLXk6cCw)  
 		- HU066 - Nueva persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
-	- HU059 - Capturar la información de Propietario real de los recursos relacionados a personas  
+	- [HU059-Capturar la información de Propietario real de los recursos relacionados a personas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/9A7GqUFxUsU_cToLONBB7w)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
 		- HU070 - Configuración de datos por segmento
-	- HU028 - Registro de **Estructura accionaria** para persona moral  
+	- [HU028-Registro de **Estructura accionaria** para persona moral](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/gU-9qCSuLHLIRToLAGeqKg)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de figura
 		- HU070 - Configuración de datos por segmento
-	- HU022 - Capturar la información de las Cuentas de cheques de contratos de PF y PM, que incluya la información: número de cuenta CLABE, nombre del banco para poder tener una cuenta en donde se dispersen los fondos.  
+	- [HU022-Capturar la información de las Cuentas de cheques de contratos de PF y PM, que incluya la información: número de cuenta CLABE, nombre del banco para poder tener una cuenta en donde se dispersen los fondos.](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/0yqYmBO2fdXp5joLE-aEpw)  
 		- HU014 - Módulo de personas
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU005 - Cuestionario perfil cualitativo
 		- HU007 - Catalogo de Bancos
-	- HU020 - Registro de Domicilio particular de contratos de PF y PM  
+	- [HU020-Registro de Domicilio particular de contratos de PF y PM](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/DJsQyTDkSL3ccToLE9qDxw)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
-	- HU021 - Persona Políticamente 
-Expuesta (PEP)  
+	- [HU021-Persona Políticamente  Expuesta (PEP)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/-M0gV95sMzXFzzoLAGelKQ)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
 		- HU003 - Catálogo cargos politicos
-	- HU030 - Capturar la información de Empleado  
+	- [HU030 - Capturar la información de Empleado](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/KabVeakEpZitOzoLJD7l3A)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
-	- HU018 - Perfilamiento de inversión de prospecto de contratos de PM ó PF - En esta se determina el perfil de inversión  
+	- [HU018-Perfilamiento de inversión de prospecto de contratos de PM ó PF - En esta se determina el perfil de inversión](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/7TqZFj0VYMWlKzoK_sBiIw)  
 		- HU014 - Módulo de personas
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
-	- HU054 - Instrucciones de envío de notificaciones  
+	- [HU054-Instrucciones de envío de notificaciones](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/RYUEgfxHJ92oNjoLAEeQVQ)  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU170 - Catalogo de recibo de instrucciones (nuevo)
 		- HU171 - Catalogo de Envio de documentación (nuevo)
 		- HU-Anexo-EP001 - Administrar Modulo de personas
 		- HU-161  Administración de catalogo de **la información de los apoderados por sucursal**
-	- HU118 - Captura de **beneficiarios** de Bursatil  
+	- [HU118-Captura de **beneficiarios** de Bursatil](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/c4A97AluOCXT9DoL_InmSw)  
 		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
 		- HU-Anexo-EP001 - Administrar Modulo de personas
-	- HU088 - Capturar el **Origen y Destino de los Recursos** - Bursátil  
+	- [HU088-Capturar el **Origen y Destino de los Recursos** - Bursátil](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/AVsIVBIjRz2vrjoLbGJJoA)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
 		- HU089 - Catálogo de fuente de ingresos
 		- HU090 - Catálogo de tipos de procedencia de recursos
 		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
-	- HU024 - Vínculos patrimoniales  :
-		- HU037 - Configuración de segmentos en módulo de personas por Tipo de contrato
-		- HU070 - Configuración de datos por segmento
-	- HU142 - Origen y Destino de los recursos Divisas  
+	- [HU142-Origen y Destino de los recursos Divisas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/P6POsng5jkqa2DoMPp3ITw)  
 		- HU067 - Asignar figura a una persona
 		- HU002 - Configuración de segmentos en módulo de personas por Tipo de participantes.
 		- HU070 - Configuración de datos por segmento
 		- HU089 - Catálogo de fuente de ingresos
 		- HU090 - Catálogo de tipos de procedencia de recursos
 		- HU091 - Catálogo de Tipos de Uso/Destino de inversión
-	- HU049 - Registrar la información de la **institución educativa** de contratos de PF y PM para poder conocer si pertenece a un giro educativo. # Dependencias
+	- [HU049 - Registrar la información de la **institución educativa** de contratos de PF y PM para poder conocer si pertenece a un giro educativo.](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/PVuErjWHzl4pHjoLE-uYdQ)  
 		- 
 		- HU-158 - Instituciones educativas.
 		- 
@@ -106,59 +109,59 @@ Expuesta (PEP)
 		- ![Image.png](/dl/xw6Ye-bjJgjrPzoMXWOuxg?slug=contratos-vector-to-be)
 		- 
 		- Nota: el registro previo de los segmentos de las figuras.
-	- HU137 - Segmento Control de documentación  
+	- [HU137-Segmento Control de documentación](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/OenxgVptztfA2joMOTsYcg)  
 		- HU037 Configuración de segmentos en módulo de personas por Tipo de contrato
 		- HU070 - Configuración de datos por segmento
 		- HU072 - Mostrar documentos aceptados en el registro de personas
 		- HU073 - Agregar documento aceptado en el registro de personas
 		- HU074 - Modificar documento aceptado en el registro de personas
 		- HU075 - Administración de Documentos por figuras
-	- HU073 - Agregar documento aceptado en el registro de personas # Dependencias
-	- HU074 - Modificar documento aceptado en el registro de personas # Dependencias
-	- HU075 - Desactivar documento para el registro de personas # Dependencias
-	- HU077 - Agregar documento aceptado en el registro de contratos # Dependencias
-	- HU078 - Modificar documento aceptado en el registro de contratos # Dependencias
-	- HU079 - Desactivar documento para el registro de contratos # Dependencias
-	- HU080 - Solicitar documentos en el registro de persona # Dependencias
-	- HU084 - Solicitar documento(s) en el registro de contrato # Dependencias
-	- HU136 - Imprimir documentación de alta de prospecto # Dependencias
+	- [HU073-Agregar documento aceptado en el registro de personas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/6NWrWN2NDtqb9ToLiv12Dg)  
+	- [HU074-Modificar documento aceptado en el registro de personas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/BXq4tSR95out4joLiv1zgA)  
+	- [HU075-Desactivar documento para el registro de personas](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/OkNMrjGhQHi7TzoLiwxkzg)  
+	- [HU077-Agregar documento aceptado en el registro de contratos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/eKwmckHLjXRzUjoLixQ-Iw)  
+	- [HU078-Modificar documento aceptado en el registro de contratos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/SJrbi6l89GjVqzoLi52KyA)  
+	- [HU079-Desactivar documento para el registro de contratos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/vKZZKiKJBHhQNzoLi6svug)  
+	- [HU080-Solicitar documentos en el registro de persona](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/1BHBwA90ewvx-zoLi6syLA)  
+	- [HU084-Solicitar documento(s) en el registro de contrato](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/sFI5ZtyAjOteLToLi8YAbQ)  
+	- [HU136-Imprimir documentación de alta de prospecto](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/qfboyhi6q7DZGToLPOT-kg)  
 		- HU153 - Plantilla solicitud de alta (B y D)
 		- HU154 - Plantilla FATCA
 		- HU155 - Plantilla aviso de privacidad(B y D)
 		- HU156 - Plantilla de Cuestionario de perfil de inversión (B)
 		- HU157 - Plantilla de entrevista(B y D)
-	- HU154 - Plantilla FATCA # Dependencias
+	- [HU154-Plantilla FATCA](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/G2-FUx6dAYpJKzoMYcm-Rw)  
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU096 - Capturar cuentas de extranjeros FATCA
-	- HU155 - Plantilla aviso de privacidad(B y D) # Dependencias
+	- [HU155-Plantilla aviso de privacidad(B y D)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/P49p3-BqnZ3dTDoMYf9FOQ)  
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU016 - Registro de **Datos generales** de la persona física y moral
-	- HU156 - Plantilla de Cuestionario de perfil de inversión (B) # Dependencias
+	- [HU156-Plantilla de Cuestionario de perfil de inversión (B)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/lopbO0ueQiYKwzoMYf9BYQ)  
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU016 - Registro de **Datos generales** de la persona física y moral
 		- HU018 - Perfilamiento de inversión de prospecto de contratos de PM ó PF
-	- HU157 - Plantilla de entrevista(B y D) # Dependencias
+	- [HU157-Plantilla de entrevista(B y D)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/BMvEFFLb-e0JZToMYjdcTQ)  
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU016 - Registro de **Datos generales** de la persona física y moral
-	- HU153 - Plantilla solicitud de alta (B y D) # Dependencias
+	- [HU153-Plantilla solicitud de alta (B y D)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/dIkc2jluRmwbyToMYcVy5A)  
 		- HU135 - Ver **detalle/radiografía del prospecto** en módulo de contratos
 		- HU061 - Documentos de Alta de persona SOLICITUD DE ALTA BURSATIL/ DIVISAS
 		- HU016 - Registro de **Datos generales** de la persona física y moral
-	- HU144 - proceso de emisión de firmas. cuando se registra que recibió la carta firmada se asigna el permiso por default.  :
-	- HU116 - Consulta de prospectos de contrato  
+	- [HU144-proceso de emisión de firmas. cuando se registra que recibió la carta firmada se asigna el permiso por default.](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/G_oQn2Ot7UCNpToMPgFHbQ)  :
+	- [HU116-Consulta de prospectos de contrato](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/TWjIZyCaQ98VSzoL9eiceQ)  
 		- HU067 - Alta de prospecto
-	- HU064 - Consulta de contratos (Módulo de contratos)  
-	- HU051 - Imprimir los documentos del Alta de contrato Bursatil # Dependencias
+	- [HU064-Consulta de contratos (Módulo de contratos)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/38JnOZznuJXpPzoLPTEdYQ)  
+	- [HU051-Imprimir los documentos del Alta de contrato Bursatil](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/PUWbk_IVOXDubDoMOTl1QQ)  
 		- HU008 - Solicitud para el anexo del servicio de SERVICIO DE PROFUNDIDAD
-	- HU135 - Ver 
- detalle/radiografía del prospecto en módulo de contratos  
+	- [HU135-Ver 
+ detalle/radiografía del prospecto en módulo de contratos](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/hG4XCL7V-nFC2DoMOKobmA)  
 		- HU069 - Catálogo de segmentos
 		- HU116 - Consulta de **prospectos de contrato**
-	- HU107 - Cambio de datos (Persona Moral)  
+	- [HU107-Cambio de datos (Persona Moral)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/vnn2UNkRT_DECzoL02R5jw)  
 		- HUXXX - Búsqueda. 
 		- HU068 - Bitacora de actualizaciones
 		- HU093 - Centro de notificaciones 
@@ -168,19 +171,7 @@ Expuesta (PEP)
 		- HU103 - Definición de trámites y procedimientos
 		- HU105 - Configuración de tipos de documento
 		- HU106 - Configuración de plantillas de documentación
-	- HU092 - Cambio de datos personales (Personas Físicas)  
-		- HUXXX - Búsqueda. 
-		- HU068 - Historico de actualizaciones de datos personales
-		- HU093 - Centro de notificaciones 
-		- HU100 - Búsqueda de prospectos
-		- HU101 - Carga de documentación adicional
-		- HU102 - Revisión de documentación adicional para prospecto
-		- HU103 - Definición de trámites y procedimientos
-		- HU105 - Configuración de tipos de documento por trámite de actualización
-		- HU106 - Configuración de plantillas de documentación
-		- HU105 - y adjuntados a una plantilla de documentación HU106
-		- ........................................................................................................
-	- HU110 - Cambio de dato en contrato (proceso automatizado)  
+	- [HU104 - Cambio de dato en contrato (proceso automatizado)](https://vectorcb.storiesonboard.com/m/contratos-vector-to-be/!card/OI-FnMpgRHmb5joMZGXfNQ)  
 		- HUXXX - Búsqueda. 
 		- HU068 - Bitacora de actualizaciones
 		- HU093 - Centro de notificaciones 

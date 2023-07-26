@@ -23,7 +23,7 @@ process2_names = [  # Information validation
     "Documentos de alta de contrato"
     "Envío de Contrato para Firma",
 ]
-process3_names = [  # Signature, activation and digitalizace
+process3_names = [  # Signature, activation and digitization
     "Recepción de Contrato Firmado",
     "Gestión de contrato",
     "Digitalización de documentos",
@@ -33,7 +33,7 @@ process4_names = [  # Contract modification
     "Modificación de cliente/contrato",
     "Digitalización de documentos",
 ]
-process5_names = [
+process5_names = [  #
     "Reportes de contratos",
 ]
 
